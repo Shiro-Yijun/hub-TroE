@@ -94,15 +94,6 @@ class LM(nn.Module):
         x = self.embed(x) * math.sqrt(self.embed_dim)  # (B, T, D)
         x = self.pos_encoder(x)
         x = self.transformer_encoder(x, mask=mask)
-        # # Transformer 默认(T, B, D)， 所以先转
-        # x = x.transpose(0, 1)                          # (T, B, D)
-        # # 位置编码
-        # x = self.pos_encoder(x)
-        # # Transformer Encoder + mask
-        # x = self.transformer_encoder(x, mask=mask)     # (T, B, D)
-        # # 转回(B, T, D)
-        # x = x.transpose(0, 1)
-        # # 预测每个位置下一个字符
         logits = self.fc(x)                            # (B, T, V)
         return logits
 
@@ -152,7 +143,6 @@ def generate_causal_mask(seq_len):
 
 def main():
     parser = argparse.ArgumentParser()
-    # parser.add_argument("--model",      default="lstm", choices=["rnn", "lstm"])
     parser.add_argument("--epochs",     type=int,   default=10)
     parser.add_argument("--seq_len",    type=int,   default=64)
     parser.add_argument("--batch_size", type=int,   default=64)
@@ -167,7 +157,6 @@ def main():
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    # print(f"device: {device}  model: {args.model.upper()}")
 
     # 数据准备
     text = load_corpus(args.corpus)
@@ -252,7 +241,6 @@ def generate_text(model, start_text, char2idx, idx2char, seq_len, device, max_ge
 
     return ''.join([idx2char[i] for i in ids])
 
-
 # 加载模型并测试
 def try_generate():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -274,7 +262,6 @@ def try_generate():
                         device=device)
     print("\n===== 文本生成结果 =====")
     print(res)
-
 
 if __name__ == "__main__":
     main()
