@@ -1,0 +1,20 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1832 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week06\text_classification项目\src\                                  
+(base) PS D:\Badou learning\作业\week06\text_classification项目\src> python predict.py --pool cls --text "苹果发布了最新的 iPhone 17，搭载 A19 芯片"
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 59495.79it/s]
+模型参数量: 102.3M  (BERT: 102.3M, 分类头: 11.5K)
+池化策略: cls
+模型加载完成，池化策略: cls
+
+文本：苹果发布了最新的 iPhone 17，搭载 A19 芯片
+预测：科技 (置信度 0.9866)
+Top-3：
+  [ 8] 科技    0.9866
+  [14] 电竞    0.0049
+  [ 6] 汽车    0.0023
+(base) PS D:\Badou learning\作业\week06\text_classification项目\src> 

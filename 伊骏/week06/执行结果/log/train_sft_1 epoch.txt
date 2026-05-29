@@ -1,0 +1,26 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1817 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week06\text_classification项目\src_llm\
+(base) PS D:\Badou learning\作业\week06\text_classification项目\src_llm> python train_sft.py --epochs 1
+使用设备: cuda  |  微调模式: LoRA 微调
+训练集: 5000 条 | 验证集（前500条）: 500 条
+
+加载 tokenizer: D:\Badou learning\作业\week06\text_classification项目\pretrain_models\Qwen2-0.5B-Instruct
+加载 base model: D:\Badou learning\作业\week06\text_classification项目\pretrain_models\Qwen2-0.5B-Instruct
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 2766.99it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+总训练步数: 312（batch=4, grad_accum=4, epochs=1, lr=0.0002）
+
+Epoch 1/1 | train_loss=0.7318  val_loss=0.6580 | 93s                                                                                                                                                                                                                                                               
+  ✓ 最优LoRA adapter已保存 → D:\Badou learning\作业\week06\text_classification项目\outputs\sft_adapter  (val_loss=0.6580)
+
+训练完成。最优 val_loss=0.6580
+训练日志 → D:\Badou learning\作业\week06\text_classification项目\outputs\train_log_sft.json
+LoRA adapter → D:\Badou learning\作业\week06\text_classification项目\outputs\sft_adapter
+
+下一步：运行 evaluate_sft.py 查看分类准确率与三方对比
+(base) PS D:\Badou learning\作业\week06\text_classification项目\src_llm> 
