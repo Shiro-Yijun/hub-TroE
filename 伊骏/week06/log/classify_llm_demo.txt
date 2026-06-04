@@ -1,0 +1,38 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1688 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week06\text_classification项目\src_llm\
+(base) PS D:\Badou learning\作业\week06\text_classification项目\src_llm> python classify_llm.py --demo                    
+使用设备: cuda
+评估样本数: 5
+加载模型: D:\Badou learning\作业\week06\text_classification项目\pretrain_models\Qwen2-0.5B-Instruct
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 2620.43it/s]
+模型加载完成
+[  1/5] ? 真实:农业   预测:None | 小产权3500和大产权6500的房子，应该选哪个？
+[  2/5] ✗ 真实:财经   预测:科技   | 企业同时属于高新企业和科技型中小企业，研发费用如何扣除？
+[  3/5] ? 真实:电竞   预测:None | 步枪之王M416枪械搭配及实战运用
+[  4/5] ? 真实:文化   预测:None | 如何寻找转世灵童---探秘西藏活佛转世制度
+[  5/5] ✓ 真实:教育   预测:教育   | 华南师范大学，厦门大学和广东外语外贸大学谁更好？
+
+==================================================
+Zero-Shot LLM 分类结果（D:\Badou learning\作业\week06\text_classification项目\pretrain_models\Qwen2-0.5B-Instruct）
+==================================================
+  样本数   : 5
+  准确率   : 1/5 = 0.2000
+  无法解析 : 3 条 (60.0%)
+  总耗时   : 0.6s, 均值 0.12s/条
+
+对比参考（典型结果）：
+  BERT fine-tune (3 epochs, cls)   val accuracy ≈ 0.57 ~ 0.62
+  Qwen2-0.5B zero-shot             val accuracy ≈ 0.20
+
+思考题：
+  1. LLM zero-shot 在哪些类别上表现好？为什么？
+  2. fine-tuning 数据量越多效果越好吗？试试只用 1000 条训练数据。
+  3. 如果换成 few-shot（每类给 2 个示例），准确率会提升多少？
+
+结果已保存 → D:\Badou learning\作业\week06\text_classification项目\outputs\llm_zero_shot_results.json
+(base) PS D:\Badou learning\作业\week06\text_classification项目\src_llm> 
