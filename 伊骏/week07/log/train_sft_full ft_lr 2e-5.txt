@@ -1,0 +1,29 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1656 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src_llm\
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src_llm> python train_sft.py --full_ft --lr 2e-5
+使用设备: cuda  |  微调模式: 全量微调
+训练集: 10748 条 | 验证集（前300条）: 300 条
+
+加载 tokenizer: D:\Badou learning\作业\week07\序列标注项目\pretrain_models\Qwen2-0.5B-Instruct
+加载 base model: D:\Badou learning\作业\week07\序列标注项目\pretrain_models\Qwen2-0.5B-Instruct
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 2953.47it/s]
+trainable params: 494,032,768 || all params: 494,032,768 || trainable%: 100.0000
+总训练步数: 2015（batch=4, grad_accum=4, epochs=3, lr=2e-05）
+
+Epoch 1/3 | train_loss=0.1096  val_loss=0.0923 | 240s                                                                                                                                                                                                                                                              
+Writing model shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.00s/it]
+  ✓ 最优完整模型已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\sft_full_ckpt  (val_loss=0.0923)
+Epoch 2/3 | train_loss=0.0517  val_loss=0.0992 | 236s                                                                                                                                                                                                                                                              
+Epoch 3/3 | train_loss=0.0315  val_loss=0.1132 | 236s                                                                                                                                                                                                                                                               
+
+训练完成。最优 val_loss=0.0923
+训练日志 → D:\Badou learning\作业\week07\序列标注项目\outputs\logs\train_full_ft.json
+完整模型 → D:\Badou learning\作业\week07\序列标注项目\outputs\sft_full_ckpt
+
+下一步：python evaluate_sft.py 查看 entity F1 与多方对比
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src_llm> 

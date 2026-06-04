@@ -1,0 +1,52 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1592 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src\
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> python evaluate.py                
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 43849.04it/s]
+模型：BERT + Linear
+  标签数：21
+  参数总量：102.3M
+  可训练参数：102.3M
+加载 checkpoint（epoch=5，val_f1=0.7538）
+数据集规模：训练=10748，验证=1343，测试=1345
+
+正在在 [validation] 集上推理...
+
+======================================================================
+模型：BERT + Linear  |  评估集：validation
+======================================================================
+Entity-level Precision: 0.7201
+Entity-level Recall:    0.7907
+Entity-level F1:        0.7538
+
+【逐类型 F1】
+              precision    recall  f1-score   support
+
+     address     0.5704    0.6300    0.5987       373
+        book     0.7283    0.8182    0.7706       154
+     company     0.7048    0.7831    0.7419       378
+        game     0.7669    0.8475    0.8052       295
+  government     0.7218    0.8300    0.7721       247
+       movie     0.7564    0.7815    0.7687       151
+        name     0.8388    0.8839    0.8607       465
+organization     0.6905    0.7902    0.7370       367
+    position     0.7347    0.8060    0.7687       433
+       scene     0.6866    0.7129    0.6995       209
+
+   micro avg     0.7201    0.7907    0.7538      3072
+   macro avg     0.7199    0.7883    0.7523      3072
+weighted avg     0.7211    0.7907    0.7541      3072
+
+【非法 BIO 序列统计】
+  总序列数：1343
+  非法开头（I-X 开头）：0 条
+  非法转移（B-X/I-X → I-Y, X≠Y）：230 条
+  合计非法序列：230 条
+  → 线性头约 17.1% 的序列含非法转移，充分训练的 CRF 可完全消除
+
+评估结果已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\logs\eval_linear_validation.json
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> 

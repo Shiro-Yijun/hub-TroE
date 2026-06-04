@@ -1,0 +1,33 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1752 毫秒。
+(base) PS D:\Badou learning> $env:DASHSCOPE_API_KEY="sk-b4817fc0e8a74bc1ab3aa2838c84fcad"
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src_llm\                      
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src_llm> python llm_ner.py                                           
+采样 100 条验证集样本
+  已处理 10/100 条
+  已处理 20/100 条
+  已处理 30/100 条
+  已处理 40/100 条
+  已处理 50/100 条
+  已处理 60/100 条
+  已处理 70/100 条
+  已处理 80/100 条
+  已处理 90/100 条
+  已处理 100/100 条
+
+============================================================
+LLM NER 对比结果（模型：qwen-plus，样本：100 条）
+============================================================
+方案                    Precision     Recall         F1
+----------------------------------------------------
+Zero-shot                0.5689     0.4689     0.5141
+Few-shot (3例)            0.5172     0.4396     0.4752
+
+LLM 评估结果已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\logs\eval_llm.json
+
+下一步：python compare_results.py
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src_llm> 

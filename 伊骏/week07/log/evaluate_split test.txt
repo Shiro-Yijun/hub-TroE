@@ -1,0 +1,58 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！httpsaka.msPSWindows
+
+加载个人及系统配置文件用了 1594 毫秒。
+(base) PS DBadou learning cd .作业week07序列标注项目src
+(base) PS DBadou learning作业week07序列标注项目src python evaluate.py --split test
+Loading weights 100%████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 199199 [00000000, 59845.59its]
+模型：BERT + Linear
+  标签数：21
+  参数总量：102.3M
+  可训练参数：102.3M
+加载 checkpoint（epoch=5，val_f1=0.7538）
+数据集规模：训练=10748，验证=1343，测试=1345
+
+正在在 [test] 集上推理...
+CProgramDataanaconda3Libsite-packagesseqevalmetricsv1.py57 UndefinedMetricWarning Recall is ill-defined and being set to 0.0 due to no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+======================================================================
+模型：BERT + Linear    评估集：test
+======================================================================
+Entity-level Precision 0.0000
+Entity-level Recall    0.0000
+Entity-level F1        0.0000
+
+【逐类型 F1】
+CProgramDataanaconda3Libsite-packagesseqevalmetricsv1.py57 UndefinedMetricWarning Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+CProgramDataanaconda3Libsite-packagesseqevalmetricsv1.py57 UndefinedMetricWarning Recall and F-score are ill-defined and being set to 0.0 due to no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score   support
+
+     address     0.0000    0.0000    0.0000         0
+        book     0.0000    0.0000    0.0000         0
+     company     0.0000    0.0000    0.0000         0
+        game     0.0000    0.0000    0.0000         0
+  government     0.0000    0.0000    0.0000         0
+       movie     0.0000    0.0000    0.0000         0
+        name     0.0000    0.0000    0.0000         0
+organization     0.0000    0.0000    0.0000         0
+    position     0.0000    0.0000    0.0000         0
+       scene     0.0000    0.0000    0.0000         0
+
+   micro avg     0.0000    0.0000    0.0000         0
+   macro avg     0.0000    0.0000    0.0000         0
+weighted avg     0.0000    0.0000    0.0000         0
+
+【非法 BIO 序列统计】
+  总序列数：1345
+  非法开头（I-X 开头）：0 条
+  非法转移（B-XI-X → I-Y, X≠Y）：206 条
+  合计非法序列：206 条
+  → 线性头约 15.3% 的序列含非法转移，充分训练的 CRF 可完全消除
+
+评估结果已保存 → DBadou learning作业week07序列标注项目outputslogseval_linear_test.json
+(base) PS DBadou learning作业week07序列标注项目src 

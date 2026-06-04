@@ -1,0 +1,56 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1912 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src\                                     
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> python explore_data.py
+======================================================================
+cluener2020 数据集统计摘要
+======================================================================
+
+【训练集】
+  样本数：10748 条
+  文本平均长度：37.4 字
+  文本最大长度：50 字
+  文本长度中位数：41 字
+  平均实体数/句：2.23
+  实体总数：23971
+  平均实体长度：4.5 字
+
+【各类实体频次（训练集）】
+  name            (人名      ) :  3755 条
+  organization    (组织机构    ) :  3210 条
+  position        (职位      ) :  3141 条
+  company         (公司      ) :  2980 条
+  address         (地址      ) :  2891 条
+  game            (游戏      ) :  2376 条
+  government      (政府机构    ) :  1835 条
+  scene           (景点/场所   ) :  1521 条
+  book            (书名      ) :  1139 条
+  movie           (影视作品    ) :  1123 条
+
+【各类实体示例（训练集，取前5个）】
+  address         (地址) : 美国 | 雷池 | 重庆 | 南京 | 北京
+  book            (书名) : 《大众软件》 | 《明堂丹令论》 | 《艺术与投资》 | 《爱丽斯梦游奇境》 | 《莫斯科防务简讯》
+  company         (公司) : 浙商银行 | 交通银行 | 万通地产 | “星展中国”南宁分行 | 新加坡星展银行
+  game            (游戏) : CSOL | 英雄联盟 | war3 | DOTA2 | 《模拟人生3》
+  government      (政府机构) : 中国与欧盟海军 | 北约 | 深圳市人大常委会 | 俄罗斯海军 | 美国使馆
+  movie           (影视作品) : 加勒比海盗3：世界尽头》 | 《变形金刚》 | 街霸》 | 《危险关系》 | 《杀破狼》
+  name            (人名) : 叶老桂 | 李成 | 吴湖帆 | 吴待秋 | 吴子深
+  organization    (组织机构) : 那不勒斯 | 锡耶纳 | 桑普 | 热那亚 | 布鲁京斯研究所桑顿中国中心
+  position        (职位) : 研究部主任 | 设计总监 | 收藏家 | 大学生 | 代理律师
+  scene           (景点/场所) : 中山陵 | 秦淮河 | 加州地方艺术馆 | 故宫 | 古琼寺
+
+正在生成可视化图表...
+  已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\figures\entity_distribution.png
+  已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\figures\text_length_distribution.png
+  P95 文本长度=49，建议 max_length=128
+  已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\figures\entity_length_distribution.png
+  实体平均长度=4.5字，CRF 对短实体边界识别优势更明显
+
+探索完成！图表已保存到 outputs/figures/
+下一步：python train.py               # 训练 BERT+Linear
+         python train.py --use_crf    # 训练 BERT+CRF
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> 

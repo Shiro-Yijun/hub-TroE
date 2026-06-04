@@ -1,0 +1,33 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1785 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src\  
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> python train.py --use_crf 
+设备：cuda
+BIO 标签数：21（O + 20 个实体标签）
+数据集规模：训练=10748，验证=1343，测试=1345
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 50601.18it/s]
+模型：BERT + CRF
+  标签数：21
+  参数总量：102.3M
+  可训练参数：102.3M
+
+训练步数：1008，预热步数：100
+
+开始训练（BERT+CRF）...
+Epoch 1/3 | train_loss=24.1477 | val_loss=8.1207 | val_entity_f1=0.7039 | time=51s                                                                                                                                                                                                                                  
+  ★ 新最优 F1=0.7039，已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\checkpoints\best_crf.pt
+Epoch 2/3 | train_loss=6.8911 | val_loss=7.3567 | val_entity_f1=0.7335 | time=50s                                                                                                                                                                                                                                  
+  ★ 新最优 F1=0.7335，已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\checkpoints\best_crf.pt
+Epoch 3/3 | train_loss=5.1983 | val_loss=7.4051 | val_entity_f1=0.7457 | time=51s                                                                                                                                                                                                                                  
+  ★ 新最优 F1=0.7457，已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\checkpoints\best_crf.pt
+
+训练完成！最优 val_entity_f1=0.7457
+  Checkpoint: D:\Badou learning\作业\week07\序列标注项目\outputs\checkpoints\best_crf.pt
+  训练日志:   D:\Badou learning\作业\week07\序列标注项目\outputs\logs\train_crf.json
+
+下一步：python evaluate.py --use_crf
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> 

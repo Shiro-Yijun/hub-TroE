@@ -1,0 +1,29 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 1609 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src_llm\
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src_llm> python train_sft.py                   
+使用设备: cuda  |  微调模式: LoRA 微调
+训练集: 10748 条 | 验证集（前300条）: 300 条
+
+加载 tokenizer: D:\Badou learning\作业\week07\序列标注项目\pretrain_models\Qwen2-0.5B-Instruct
+加载 base model: D:\Badou learning\作业\week07\序列标注项目\pretrain_models\Qwen2-0.5B-Instruct
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 2796.79it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+总训练步数: 2015（batch=4, grad_accum=4, epochs=3, lr=0.0002）
+
+Epoch 1/3 | train_loss=0.1111  val_loss=0.0942 | 204s                                                                                                                                                                                                                                                              
+  ✓ 最优LoRA adapter已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\sft_adapter  (val_loss=0.0942)
+Epoch 2/3 | train_loss=0.0720  val_loss=0.0880 | 203s                                                                                                                                                                                                                                                              
+  ✓ 最优LoRA adapter已保存 → D:\Badou learning\作业\week07\序列标注项目\outputs\sft_adapter  (val_loss=0.0880)
+Epoch 3/3 | train_loss=0.0564  val_loss=0.0907 | 203s                                                                                                                                                                                                                                                              
+
+训练完成。最优 val_loss=0.0880
+训练日志 → D:\Badou learning\作业\week07\序列标注项目\outputs\logs\train_sft.json
+LoRA adapter → D:\Badou learning\作业\week07\序列标注项目\outputs\sft_adapter
+
+下一步：python evaluate_sft.py 查看 entity F1 与多方对比
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src_llm> 

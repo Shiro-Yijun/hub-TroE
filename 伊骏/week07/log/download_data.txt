@@ -1,0 +1,67 @@
+Windows PowerShell
+版权所有（C） Microsoft Corporation。保留所有权利。
+
+安装最新的 PowerShell，了解新功能和改进！https://aka.ms/PSWindows
+
+加载个人及系统配置文件用了 2607 毫秒。
+(base) PS D:\Badou learning> cd .\作业\week07\序列标注项目\src\
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> python download_data.py
+============================================================
+正在下载 cluener2020（CLUE benchmark 官方数据）...
+  来源：Google Storage（无需 HuggingFace 账号）
+  数据集：10类细粒度中文NER（人名/公司/政府机构等）
+  规模：训练集 10748 条，验证集 1343 条，测试集 1345 条
+============================================================
+  下载 https://storage.googleapis.com/cluebenchmark/tasks/cluener_public.zip ...
+  下载完成（1030 KB）
+  zip 内文件：['train.json', 'dev.json', 'test.json', 'cluener_predict.json', 'README.md']
+  [train] 10748 条 → D:\Badou learning\作业\week07\序列标注项目\data\cluener\train.json
+  [validation] 1343 条 → D:\Badou learning\作业\week07\序列标注项目\data\cluener\validation.json
+  [test] 1345 条 → D:\Badou learning\作业\week07\序列标注项目\data\cluener\test.json
+
+cluener2020 数据格式示例（span标注）：
+{
+  "text": "浙商银行企业信贷部叶老桂博士则从另一个角度对五道门槛进行了解读。叶老桂认为，对目前国内商业银行而言，",
+  "label": {
+    "name": {
+      "叶老桂": [
+        [
+          9,
+          11
+        ]
+      ]
+    },
+    "company": {
+      "浙商银行": [
+        [
+          0,
+          3
+        ]
+      ]
+    }
+  }
+}
+
+实体类型（共10类）：['address', 'book', 'company', 'game', 'government', 'movie', 'name', 'organization', 'position', 'scene']
+
+============================================================
+正在下载人民日报 NER 数据集（课后练习用）...
+  数据集：3类实体（PER人名 / ORG机构 / LOC地名）
+  规模：训练集 ~20864 句，验证集 ~2318 句，测试集 ~4636 句
+  来源：GitHub OYE93/Chinese-NLP-Corpus（无需账号）
+============================================================
+  下载 train ← https://raw.githubusercontent.com/OYE93/Chinese-NLP-Corpus/master/NER/People%27s%20Daily/example.train
+  [train] 20864 条 → D:\Badou learning\作业\week07\序列标注项目\data\peoples_daily\train.json
+  下载 validation ← https://raw.githubusercontent.com/OYE93/Chinese-NLP-Corpus/master/NER/People%27s%20Daily/example.dev
+  [validation] 2318 条 → D:\Badou learning\作业\week07\序列标注项目\data\peoples_daily\validation.json
+  下载 test ← https://raw.githubusercontent.com/OYE93/Chinese-NLP-Corpus/master/NER/People%27s%20Daily/example.test
+  [test] 4636 条 → D:\Badou learning\作业\week07\序列标注项目\data\peoples_daily\test.json
+
+人民日报 NER 标签体系（共7个）：['O', 'B-PER', 'I-PER', 'B-ORG', 'I-ORG', 'B-LOC', 'I-LOC']
+
+============================================================
+cluener2020 下载完成！
+  数据目录: D:\Badou learning\作业\week07\序列标注项目\data\cluener
+
+下一步：python explore_data.py
+(base) PS D:\Badou learning\作业\week07\序列标注项目\src> 
