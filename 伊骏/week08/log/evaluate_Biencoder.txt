@@ -1,0 +1,98 @@
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> python evaluate.py --model_type biencoder --ckpt ../outputs/checkpoints/biencoder_cosine_best.pt
+设备: cuda
+加载 checkpoint: ../outputs/checkpoints/biencoder_cosine_best.pt
+训练信息: {'bert_path': 'D:\\Badou learning\\作业\\pretrain_models\\bert-base-chinese', 'data_dir': 'D:\\Badou learning\\作业\\week08\\文本匹配项目\\data\\afqmc', 'loss': 'cosine', 'pool': 'mean', 'num_hidden_layers': 4, 'epochs': 3, 'batch_size': 32, 'max_length': 64, 'lr': 2e-05, 'head_lr_mult': 5.0, 'warmup_ratio': 0.1, 'grad_accum': 1, 'margin': 0.3}
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 71/71 [00:00<00:00, 68005.39it/s]
+模型: BiEncoder (pool=mean, layers=4)
+参数量: 45.6M  (BERT 骨干: 45.6M)
+
+==================================================
+BiEncoder 评估结果（validation，4316 条）
+  最优阈值: 0.52
+  Accuracy: 0.6740
+  F1      : 0.6739
+  AUC     : 0.6995
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 20313 (\N{CJK UNIFIED IDEOGRAPH-4F59}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 24358 (\N{CJK UNIFIED IDEOGRAPH-5F26}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 30456 (\N{CJK UNIFIED IDEOGRAPH-76F8}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 20284 (\N{CJK UNIFIED IDEOGRAPH-4F3C}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 24230 (\N{CJK UNIFIED IDEOGRAPH-5EA6}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 23494 (\N{CJK UNIFIED IDEOGRAPH-5BC6}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 20998 (\N{CJK UNIFIED IDEOGRAPH-5206}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 24067 (\N{CJK UNIFIED IDEOGRAPH-5E03}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 65288 (\N{FULLWIDTH LEFT PARENTHESIS}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 65289 (\N{FULLWIDTH RIGHT PARENTHESIS}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 27491 (\N{CJK UNIFIED IDEOGRAPH-6B63}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 26679 (\N{CJK UNIFIED IDEOGRAPH-6837}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 26412 (\N{CJK UNIFIED IDEOGRAPH-672C}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 36127 (\N{CJK UNIFIED IDEOGRAPH-8D1F}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 26368 (\N{CJK UNIFIED IDEOGRAPH-6700}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 20248 (\N{CJK UNIFIED IDEOGRAPH-4F18}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 38408 (\N{CJK UNIFIED IDEOGRAPH-9608}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:189: UserWarning: Glyph 20540 (\N{CJK UNIFIED IDEOGRAPH-503C}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 23494 (\N{CJK UNIFIED IDEOGRAPH-5BC6}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 24230 (\N{CJK UNIFIED IDEOGRAPH-5EA6}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 30456 (\N{CJK UNIFIED IDEOGRAPH-76F8}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 20284 (\N{CJK UNIFIED IDEOGRAPH-4F3C}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 20998 (\N{CJK UNIFIED IDEOGRAPH-5206}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 24067 (\N{CJK UNIFIED IDEOGRAPH-5E03}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 65288 (\N{FULLWIDTH LEFT PARENTHESIS}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 65289 (\N{FULLWIDTH RIGHT PARENTHESIS}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 20313 (\N{CJK UNIFIED IDEOGRAPH-4F59}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 24358 (\N{CJK UNIFIED IDEOGRAPH-5F26}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 27491 (\N{CJK UNIFIED IDEOGRAPH-6B63}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 26679 (\N{CJK UNIFIED IDEOGRAPH-6837}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 26412 (\N{CJK UNIFIED IDEOGRAPH-672C}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 36127 (\N{CJK UNIFIED IDEOGRAPH-8D1F}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 26368 (\N{CJK UNIFIED IDEOGRAPH-6700}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 20248 (\N{CJK UNIFIED IDEOGRAPH-4F18}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 38408 (\N{CJK UNIFIED IDEOGRAPH-9608}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+D:\Badou learning\作业\week08\文本匹配项目\src\evaluate.py:193: UserWarning: Glyph 20540 (\N{CJK UNIFIED IDEOGRAPH-503C}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150)
+  图表已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\figures\biencoder_validation_sim_dist.png
+
+              precision    recall  f1-score   support
+
+         不相似       0.76      0.76      0.76      2978
+          相似       0.47      0.47      0.47      1338
+
+    accuracy                           0.67      4316
+   macro avg       0.62      0.62      0.62      4316
+weighted avg       0.67      0.67      0.67      4316
+
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> 

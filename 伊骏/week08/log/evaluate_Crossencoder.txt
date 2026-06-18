@@ -1,0 +1,23 @@
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> python evaluate.py --model_type crossencoder --ckpt ../outputs/checkpoints/crossencoder_best.pt
+设备: cuda
+加载 checkpoint: ../outputs/checkpoints/crossencoder_best.pt
+训练信息: {'bert_path': 'D:\\Badou learning\\作业\\pretrain_models\\bert-base-chinese', 'data_dir': 'D:\\Badou learning\\作业\\week08\\文本匹配项目\\data\\afqmc', 'num_hidden_layers': 4, 'epochs': 3, 'batch_size': 32, 'max_length': 128, 'lr': 2e-05, 'head_lr_mult': 5.0, 'warmup_ratio': 0.1, 'grad_accum': 1}
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 71/71 [00:00<00:00, 70003.66it/s]
+模型: CrossEncoder (layers=4)
+参数量: 45.6M  (BERT 骨干: 45.6M)
+
+==================================================
+CrossEncoder 评估结果（validation，4316 条）
+  Accuracy: 0.6812
+  F1      : 0.6692
+
+              precision    recall  f1-score   support
+
+         不相似       0.75      0.82      0.78      2978
+          相似       0.48      0.38      0.42      1338
+
+    accuracy                           0.68      4316
+   macro avg       0.61      0.60      0.60      4316
+weighted avg       0.66      0.68      0.67      4316
+
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> 

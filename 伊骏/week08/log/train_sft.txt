@@ -1,0 +1,22 @@
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src_llm> python train_sft.py 
+使用设备: cuda  |  微调模式: LoRA 微调
+训练集: 5000 条（正2500+负2500，平衡采样）| 验证集（前500条）: 500 条
+
+加载 tokenizer: D:\Badou learning\作业\pretrain_models\Qwen2-0.5B-Instruct
+加载 base model: D:\Badou learning\作业\pretrain_models\Qwen2-0.5B-Instruct
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 2913.66it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+总训练步数: 937（batch=4, grad_accum=4, epochs=3, lr=0.0002）
+
+Epoch 1/3 | train_loss=0.1618  val_loss=0.1238 | 83s                                                                                                                                                                                                                                                               
+  ✓ 最优LoRA adapter已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\sft_adapter  (val_loss=0.1238)
+Epoch 2/3 | train_loss=0.1292  val_loss=0.1216 | 82s                                                                                                                                                                                                                                                               
+  ✓ 最优LoRA adapter已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\sft_adapter  (val_loss=0.1216)
+Epoch 3/3 | train_loss=0.1059  val_loss=0.1264 | 82s                                                                                                                                                                                                                                                               
+
+训练完成。最优 val_loss=0.1216
+训练日志 → D:\Badou learning\作业\week08\文本匹配项目\outputs\logs\train_sft.json
+LoRA adapter → D:\Badou learning\作业\week08\文本匹配项目\outputs\sft_adapter
+
+下一步：python evaluate_sft.py 查看 Accuracy / F1 与多方对比
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src_llm> 

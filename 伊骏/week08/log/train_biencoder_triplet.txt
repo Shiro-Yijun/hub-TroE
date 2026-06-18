@@ -1,0 +1,27 @@
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> python train_biencoder.py --loss triplet --margin 0.3
+设备: cuda
+Loss 类型: triplet  池化策略: mean  BERT 层数: 4  Epochs: 3
+
+DataLoader 构建中...
+  TripletDataset: 构建 10,573 个三元组
+  triplet train :  10,573 三元组,   331 batch
+  val (pair)    :   4,316 对,       135 batch
+
+构建模型...
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 71/71 [00:00<00:00, 67696.20it/s]
+模型: BiEncoder (pool=mean, layers=4)
+参数量: 45.6M  (BERT 骨干: 45.6M)
+总训练步数: 993  Warmup 步数: 99
+Epoch 1/3 | train_loss=0.0701 | val_acc=0.6691 val_f1=0.6500 threshold=0.82 | 14s                                                                                                                                                                                                                                  
+  ✓ 新最优模型已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\checkpoints\biencoder_triplet_best.pt  (val_f1=0.6500)
+Epoch 2/3 | train_loss=0.0153 | val_acc=0.6659 val_f1=0.6554 threshold=0.82 | 14s                                                                                                                                                                                                                                  
+  ✓ 新最优模型已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\checkpoints\biencoder_triplet_best.pt  (val_f1=0.6554)
+Epoch 3/3 | train_loss=0.0105 | val_acc=0.6638 val_f1=0.6590 threshold=0.81 | 14s                                                                                                                                                                                                                                  
+  ✓ 新最优模型已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\checkpoints\biencoder_triplet_best.pt  (val_f1=0.6590)
+
+训练完成。最优 val_f1=0.6590
+训练日志 → D:\Badou learning\作业\week08\文本匹配项目\outputs\logs\biencoder_triplet_log.json
+最优 checkpoint → D:\Badou learning\作业\week08\文本匹配项目\outputs\checkpoints\biencoder_triplet_best.pt
+
+运行评估：python evaluate.py --model_type biencoder --ckpt D:\Badou learning\作业\week08\文本匹配项目\outputs\checkpoints\biencoder_triplet_best.pt
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> 

@@ -1,0 +1,71 @@
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> python explore_data.py
+
+==================================================
+【train】共 34,334 条
+==================================================
+  正样本（相似）  : 10,573 (30.8%)
+  负样本（不相似）: 23,761 (69.2%)
+  不均衡比 (neg/pos): 2.2x
+  句子字符长度 — 均值=13.4  中位数=12  P95=24  最长=112
+  示例正样本：
+    ✓  '我的花呗账单是***，还款怎么是***'  ||  '我的花呗，月结出来说让我还***元，我自己算了一下详细名单我应该还***元'
+    ✓  '支付宝系统点我的里面没有花呗这一项'  ||  '我下载支付宝怎么没有花呗的'
+  示例负样本：
+    ✗  '蚂蚁借呗等额还款可以换成先息后本吗'  ||  '借呗有先息到期还本吗'
+    ✗  '蚂蚁花呗说我违约一次'  ||  '蚂蚁花呗违约行为是什么'
+
+==================================================
+【validation】共 4,316 条
+==================================================
+  正样本（相似）  :  1,338 (31.0%)
+  负样本（不相似）:  2,978 (69.0%)
+  不均衡比 (neg/pos): 2.2x
+  句子字符长度 — 均值=13.3  中位数=12  P95=25  最长=82
+  示例正样本：
+    ✓  '我的蚂蚁花呗支付金额怎么会有限制'  ||  '我到支付宝实体店消费用花呗支付受金额限制'
+    ✓  '为什么这个订单不可以花呗支付'  ||  '为什么支付时没有出现用花呗支付'
+  示例负样本：
+    ✗  '双十一花呗提额在哪'  ||  '里可以提花呗额度'
+    ✗  '花呗支持高铁票支付吗'  ||  '为什么友付宝不支持花呗付款'
+
+==================================================
+【test】共 3,861 条
+==================================================
+  标签未公开（CLUE 竞赛格式）:  3,861 条  —— 仅供参考，不用于评估
+  句子字符长度 — 均值=13.2  中位数=12  P95=24  最长=65
+  示例正样本：
+  示例负样本：
+
+==================================================
+生成可视化图表...
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:90: UserWarning: Glyph 19981 (\N{CJK UNIFIED IDEOGRAPH-4E0D}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:90: UserWarning: Glyph 30456 (\N{CJK UNIFIED IDEOGRAPH-76F8}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:90: UserWarning: Glyph 20284 (\N{CJK UNIFIED IDEOGRAPH-4F3C}) missing from font(s) DejaVu Sans.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:90: UserWarning: Tight layout not applied. The bottom and top margins cannot be made large enough to accommodate all Axes decorations.
+  fig.tight_layout()
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:92: UserWarning: Glyph 19981 (\N{CJK UNIFIED IDEOGRAPH-4E0D}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150, bbox_inches="tight")
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:92: UserWarning: Glyph 30456 (\N{CJK UNIFIED IDEOGRAPH-76F8}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150, bbox_inches="tight")
+D:\Badou learning\作业\week08\文本匹配项目\src\explore_data.py:92: UserWarning: Glyph 20284 (\N{CJK UNIFIED IDEOGRAPH-4F3C}) missing from font(s) DejaVu Sans.
+  fig.savefig(save_path, dpi=150, bbox_inches="tight")
+  图表已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\figures\label_distribution.png
+  图表已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\figures\char_length_distribution.png
+  字符长度统计（train 全部句子）：
+    均值=13.4  中位数=12  P95=24  最长=112
+    max_length= 32 覆盖率: 98.4%
+    max_length= 48 覆盖率: 99.7%
+    max_length= 64 覆盖率: 99.9%
+    max_length= 96 覆盖率: 100.0%
+  图表已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\figures\length_diff_distribution.png
+  长度差：正样本均值=4.2  负样本均值=4.4
+  ✓ 正/负样本长度差接近，无明显 length bias
+  计算 Token 长度（需要 tokenize，稍慢...）
+  图表已保存 → D:\Badou learning\作业\week08\文本匹配项目\outputs\figures\token_length_distribution.png
+  Token 长度：均值=13.2  P95=24  最长=84
+
+所有图表已保存至 → D:\Badou learning\作业\week08\文本匹配项目\outputs\figures
+(base) PS D:\Badou learning\作业\week08\文本匹配项目\src> 
