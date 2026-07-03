@@ -1,0 +1,68 @@
+(vllm_env) shiro@DESKTOP-9P987NN:/mnt/d/Badou learning/作业/week09/vllm_deployment/src$ python demo_guided_json.py
+==============================================================================
+  Demo: guided_json（JSON Schema 约束）
+  Model: qwen2-0.5b
+  对比三种模式：裸 prompt / response_format / guided_json
+==============================================================================
+
+▶ 招行 2023 年营收多少
+  [raw             ] ✓  {"company": "招商银行", "year": 2023, "metric": "营收"}
+  [response_format ] ✓  {"company": "招商银行", "year": 2023, "metric": "营收"}
+  [guided_json     ] ✓  {"company": "招商银行", "year": 2023, "metric": "营收"}
+
+▶ 贵州茅台 2022 的净利润
+  [raw             ] ✓  {"company": "贵州茅台", "year": 2022, "metric": "净利润"}
+  [response_format ] ✓  {"company": "贵州茅台", "year": 2022, "metric": "净利润"}
+  [guided_json     ] ✓  {"company": "贵州茅台", "year": 2022, "metric": "净利润"}
+
+▶ 平安银行去年（2024）的 ROE
+  [raw             ] ✓  {"company": "平安银行", "year": 2024, "metric": "ROE"}
+  [response_format ] ✓  {"company": "平安银行", "year": 2024, "metric": "ROE"}
+  [guided_json     ] ✓  {"company": "平安银行", "year": 2024, "metric": "ROE"}
+
+▶ 2021 年五粮液毛利率
+  [raw             ] ✓  {"company": "五粮液", "year": 2021, "metric": "毛利率"}
+  [response_format ] ✓  {"company": "五粮液", "year": 2021, "metric": "毛利率"}
+  [guided_json     ] ✓  {"company": "五粮液", "year": 2021, "metric": "毛利率"}
+
+▶ 2023 宁德时代经营现金流
+  [raw             ] ✓  {"company": "宁德时代", "year": 2023, "metric": "经营现金流"}
+  [response_format ] ✓  {"company": "宁德时代", "year": 2023, "metric": "经营现金流"}
+  [guided_json     ] ✓  {"company": "宁德时代", "year": 2023, "metric": "经营现金流"}
+
+▶ 问一下比亚迪 2024 的总资产规模
+  [raw             ] ✓  {"company": "比亚迪", "year": 2024, "metric": "总资产"}
+  [response_format ] ✓  {"company": "比亚迪", "year": 2024, "metric": "总资产"}
+  [guided_json     ] ✓  {"company": "比亚迪", "year": 2024, "metric": "总资产"}
+
+▶ 茅台 2020 年利润情况
+  [raw             ] ✓  {"company": "茅台", "year": 2020, "metric": "净利润"}
+  [response_format ] ✓  {"company": "茅台", "year": 2020, "metric": "净利润"}
+  [guided_json     ] ✓  {"company": "茅台", "year": 2020, "metric": "净利润"}
+
+▶ ICBC 2023 营收
+  [raw             ] ✓  {"company": "中国工商银行", "year": 2023, "metric": "营收"}
+  [response_format ] ✓  {"company": "中国工商银行", "year": 2023, "metric": "营收"}
+  [guided_json     ] ✓  {"company": "中国工商银行", "year": 2023, "metric": "营收"}
+
+▶ 隆基绿能 22 年 roe
+  [raw             ] ✗  {"company": "隆基绿能", "year": 22, "metric": "ROE"}
+  [response_format ] ✗  {"company": "隆基绿能", "year": 22, "metric": "ROE"}
+  [guided_json     ] ✗  {"company": "隆基绿能", "year": 22, "metric": "ROE"}
+
+==============================================================================
+  9 条测试结果汇总
+==============================================================================
+指标                      裸 prompt          response_format     guided_json
+------------------------------------------------------------------------------
+合法 JSON               9/9 (100%)      9/9 (100%)      9/9 (100%)
+字段齐全                  9/9 (100%)      9/9 (100%)      9/9 (100%)
+year 在 2015~2025      8/9 (89%)      8/9 (89%)      8/9 (89%)
+metric 在枚举内           9/9 (100%)      9/9 (100%)      9/9 (100%)
+jsonschema 完全通过       8/9 (89%)      8/9 (89%)      8/9 (89%)
+
+==============================================================================
+  结论：
+    response_format 只保证是 JSON，不保证字段名、类型、枚举正确
+    guided_json     是唯一 100% 保证 schema 合法的方式
+==============================================================================

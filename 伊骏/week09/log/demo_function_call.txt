@@ -1,0 +1,130 @@
+(vllm_env) shiro@DESKTOP-9P987NN:/mnt/d/Badou learning/作业/week09/vllm_deployment/src$ python demo_function_call.py
+==============================================================================
+  demo_function_call.py   核心：裸 prompt vs response_format vs guided_json
+  Model: qwen2-0.5b
+==============================================================================
+
+==============================================================================
+  工具: get_stock_quote   测试数: 50   模式: 3
+==============================================================================
+  进度: 10/50
+  进度: 20/50
+  进度: 30/50
+  进度: 40/50
+  进度: 50/50
+
+──────────────────────────────────────────────────────────────────────────────
+  【get_stock_quote】 50 条测试 × 3 模式 汇总
+──────────────────────────────────────────────────────────────────────────────
+指标                      裸 prompt            response_format       guided_json
+──────────────────────────────────────────────────────────────────────────────
+JSON 语法合法             49/50 ( 98%)       50/50 (100%)       49/50 ( 98%)
+必选字段齐全                49/50 ( 98%)       50/50 (100%)       49/50 ( 98%)
+完整 schema 通过 ★        44/50 ( 88%)       44/50 ( 88%)       43/50 ( 86%)
+平均延迟（秒）               0.099              0.099              0.096
+
+──────────────────────────────────────────────────────────────────────────────
+  【get_stock_quote】 典型失败案例（前 3 条）
+──────────────────────────────────────────────────────────────────────────────
+
+[raw] 失败示例（schema 校验未通过）：
+  ▶ Prompt: 300750 宁德时代最高价
+    输出:   {"symbol": "300750", "market": "SH", "date": "2026-05-12", "fields": ["最高价"], "adjust": "none"}
+    错误:   schema: '最高价' is not one of ['open', 'close', 'high', 'low', 'volume']
+  ▶ Prompt: 宁德时代今天最高最低
+    输出:   {"symbol": "390000", "market": "SH", "date": "2026-05-12", "fields": ["最高", "最低"], "adjust": "none"}
+    错误:   schema: '最低' is not one of ['open', 'close', 'high', 'low', 'volume']
+  ▶ Prompt: 五粮液现在什么价
+    输出:   {"symbol": "5208.HK", "market": "HK", "date": "2026-05-12", "fields": ["close", "open"], "adjust": "none"}
+    错误:   schema: '5208.HK' does not match '^\\d{6}$'
+
+[response_format] 失败示例（schema 校验未通过）：
+  ▶ Prompt: 300750 宁德时代最高价
+    输出:   {"symbol": "300750", "market": "SH", "date": "2026-05-12", "fields": ["最高价"], "adjust": "none"}
+    错误:   schema: '最高价' is not one of ['open', 'close', 'high', 'low', 'volume']
+  ▶ Prompt: 宁德时代今天最高最低
+    输出:   {"symbol": "390000", "market": "SH", "date": "2026-05-12", "fields": ["最高", "最低"], "adjust": "none"}
+    错误:   schema: '最低' is not one of ['open', 'close', 'high', 'low', 'volume']
+  ▶ Prompt: 五粮液现在什么价
+    输出:   {"symbol": "5208", "market": "SH", "date": "2026-05-12", "fields": ["close", "open"], "adjust": "none"}
+    错误:   schema: '5208' does not match '^\\d{6}$'
+
+[guided_json] 失败示例（schema 校验未通过）：
+  ▶ Prompt: 300750 宁德时代最高价
+    输出:   {"symbol": "300750", "market": "SH", "date": "2026-05-12", "fields": ["最高价"], "adjust": "none"}
+    错误:   schema: '最高价' is not one of ['open', 'close', 'high', 'low', 'volume']
+  ▶ Prompt: 宁德时代今天最高最低
+    输出:   {"symbol": "390000", "market": "SH", "date": "2026-05-12", "fields": ["最高", "最低"], "adjust": "none"}
+    错误:   schema: '最低' is not one of ['open', 'close', 'high', 'low', 'volume']
+  ▶ Prompt: 五粮液现在什么价
+    输出:   {"symbol": "5208", "market": "SH", "date": "2026-05-12", "fields": ["close", "open"], "adjust": "none"}
+    错误:   schema: '5208' does not match '^\\d{6}$'
+
+  [耗时 15.0s]
+
+==============================================================================
+  工具: create_order   测试数: 50   模式: 3
+==============================================================================
+  进度: 10/50
+  进度: 20/50
+  进度: 30/50
+  进度: 40/50
+  进度: 50/50
+
+──────────────────────────────────────────────────────────────────────────────
+  【create_order】 50 条测试 × 3 模式 汇总
+──────────────────────────────────────────────────────────────────────────────
+指标                      裸 prompt            response_format       guided_json
+──────────────────────────────────────────────────────────────────────────────
+JSON 语法合法             49/50 ( 98%)       50/50 (100%)       48/50 ( 96%)
+必选字段齐全                49/50 ( 98%)       50/50 (100%)       48/50 ( 96%)
+完整 schema 通过 ★        30/50 ( 60%)       30/50 ( 60%)       29/50 ( 58%)
+平均延迟（秒）               0.119              0.123              0.118
+
+──────────────────────────────────────────────────────────────────────────────
+  【create_order】 典型失败案例（前 3 条）
+──────────────────────────────────────────────────────────────────────────────
+
+[raw] 失败示例（schema 校验未通过）：
+  ▶ Prompt: 下单 iPhone 15 一台，13855556666 刷卡
+    输出:   {"product": "iPhone 15", "quantity": 1, "user_phone": "13855556666", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "credit ca
+    错误:   schema: 'credit card' is not one of ['alipay', 'wechat', 'card']
+  ▶ Prompt: 给我 200 个鼠标，电话 13912345678
+    输出:   {"product": "鼠标", "quantity": 200, "user_phone": "13912345678", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "alipay"}
+    错误:   schema: 200 is greater than the maximum of 100
+  ▶ Prompt: 订 0 个苹果，13812345678
+    输出:   {"product": "苹果", "quantity": 0, "user_phone": "13812345678", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "alipay"}
+    错误:   schema: 0 is less than the minimum of 1
+
+[response_format] 失败示例（schema 校验未通过）：
+  ▶ Prompt: 下单 iPhone 15 一台，13855556666 刷卡
+    输出:   {"product": "iPhone 15", "quantity": 1, "user_phone": "13855556666", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "credit ca
+    错误:   schema: 'credit card' is not one of ['alipay', 'wechat', 'card']
+  ▶ Prompt: 给我 200 个鼠标，电话 13912345678
+    输出:   {"product": "鼠标", "quantity": 200, "user_phone": "13912345678", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "alipay"}
+    错误:   schema: 200 is greater than the maximum of 100
+  ▶ Prompt: 订 0 个苹果，13812345678
+    输出:   {"product": "苹果", "quantity": 0, "user_phone": "13812345678", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "alipay"}
+    错误:   schema: 0 is less than the minimum of 1
+
+[guided_json] 失败示例（schema 校验未通过）：
+  ▶ Prompt: 下单 iPhone 15 一台，13855556666 刷卡
+    输出:   {"product": "iPhone 15", "quantity": 1, "user_phone": "13855556666", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "credit ca
+    错误:   schema: 'credit card' is not one of ['alipay', 'wechat', 'card']
+  ▶ Prompt: 给我 200 个鼠标，电话 13912345678
+    输出:   {"product": "鼠标", "quantity": 200, "user_phone": "13912345678", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "alipay"}
+    错误:   schema: 200 is greater than the maximum of 100
+  ▶ Prompt: 订 0 个苹果，13812345678
+    输出:   {"product": "苹果", "quantity": 0, "user_phone": "13812345678", "delivery_date": "2026-05-13", "priority": "urgent", "payment_method": "alipay"}
+    错误:   schema: 0 is less than the minimum of 1
+
+  [耗时 18.2s]
+
+详细结果已保存：/mnt/d/Badou learning/作业/week09/vllm_deployment/src/../outputs/function_call_results.json
+
+==============================================================================
+  核心结论：
+    裸 prompt        — JSON 语法偶尔错 / 字段拼错 / 正则枚举不符
+    response_format  — JSON 合法率接近满分，但字段语义仍错
+    guided_json      — 100% 满足完整 schema（小模型从不可用变可靠）
+==============================================================================

@@ -1,0 +1,99 @@
+(vllm_env) shiro@DESKTOP-9P987NN:/mnt/d/Badou learning/作业/week09/vllm_deployment/src$ python bench_throughput.py
+======================================================================
+  Throughput Benchmark  |  50 prompts × max 100 new tokens
+======================================================================
+
+======================================================================
+  加载 transformers Qwen2-0.5B-Instruct
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+[A] transformers 串行（一次一条）...
+    进度 10/50
+    进度 20/50
+    进度 30/50
+    进度 40/50
+    进度 50/50
+
+[B] transformers batch=8（手动 padding）...
+    进度 batch 1/7
+    进度 batch 2/7
+    进度 batch 3/7
+    进度 batch 4/7
+    进度 batch 5/7
+    进度 batch 6/7
+    进度 batch 7/7
+
+======================================================================
+  加载 vLLM Qwen2-0.5B-Instruct
+======================================================================
+INFO 07-03 10:17:39 [utils.py:233] non-default args: {'dtype': 'float16', 'max_model_len': 2048, 'gpu_memory_utilization': 0.6, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/mnt/d/Badou learning/作业/pretrain_models/Qwen2-0.5B-Instruct'}
+INFO 07-03 10:17:39 [model.py:555] Resolved architecture: Qwen2ForCausalLM
+WARNING 07-03 10:17:39 [model.py:2018] Casting torch.bfloat16 to torch.float16.
+INFO 07-03 10:17:39 [model.py:1680] Using max model len 2048
+INFO 07-03 10:17:39 [scheduler.py:239] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 07-03 10:17:39 [vllm.py:840] Asynchronous scheduling is enabled.
+WARNING 07-03 10:17:39 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 07-03 10:17:39 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 07-03 10:17:39 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+INFO 07-03 10:17:40 [vllm.py:1089] Cudagraph is disabled under eager mode
+INFO 07-03 10:17:40 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+WARNING 07-03 10:17:40 [system_utils.py:157] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized; WSL is detected and NVML is not compatible with fork
+(EngineCore pid=9018) INFO 07-03 10:17:44 [core.py:109] Initializing a V1 LLM engine (v0.20.1) with config: model='/mnt/d/Badou learning/作业/pretrain_models/Qwen2-0.5B-Instruct', speculative_config=None, tokenizer='/mnt/d/Badou learning/作业/pretrain_models/Qwen2-0.5B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/mnt/d/Badou learning/作业/pretrain_models/Qwen2-0.5B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, moe_backend='auto')
+(EngineCore pid=9018) INFO 07-03 10:17:44 [nixl_utils.py:20] Setting UCX_RCACHE_MAX_UNRELEASED to '1024' to avoid a rare memory leak in UCX when using NIXL.
+(EngineCore pid=9018) WARNING 07-03 10:17:44 [nixl_utils.py:34] NIXL is not available
+(EngineCore pid=9018) WARNING 07-03 10:17:44 [nixl_utils.py:44] NIXL agent config is not available
+(EngineCore pid=9018) WARNING 07-03 10:17:45 [interface.py:686] Using 'pin_memory=False' as WSL is detected. This may slow down the performance.
+(EngineCore pid=9018) INFO 07-03 10:17:45 [parallel_state.py:1402] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.23.214.116:44319 backend=nccl
+(EngineCore pid=9018) INFO 07-03 10:17:45 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=9018) INFO 07-03 10:17:46 [gpu_model_runner.py:4777] Starting to load model /mnt/d/Badou learning/作业/pretrain_models/Qwen2-0.5B-Instruct...
+(EngineCore pid=9018) INFO 07-03 10:17:46 [cuda.py:368] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=9018) INFO 07-03 10:17:46 [flash_attn.py:646] Using FlashAttention version 2
+(EngineCore pid=9018) INFO 07-03 10:17:46 [weight_utils.py:904] Filesystem type for checkpoints: 9P. Checkpoint size: 0.92 GiB. Available RAM: 33.18 GiB.
+(EngineCore pid=9018) INFO 07-03 10:17:46 [weight_utils.py:927] Auto-prefetch is disabled because the filesystem (9P) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.26s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.26s/it]
+(EngineCore pid=9018)
+(EngineCore pid=9018) INFO 07-03 10:17:49 [default_loader.py:384] Loading weights took 2.37 seconds
+(EngineCore pid=9018) INFO 07-03 10:17:49 [gpu_model_runner.py:4879] Model loading took 0.93 GiB memory and 2.983635 seconds
+(EngineCore pid=9018) INFO 07-03 10:17:50 [gpu_worker.py:440] Available KV cache memory: 17.39 GiB
+(EngineCore pid=9018) INFO 07-03 10:17:50 [kv_cache_utils.py:1708] GPU KV cache size: 1,519,616 tokens
+(EngineCore pid=9018) INFO 07-03 10:17:50 [kv_cache_utils.py:1709] Maximum concurrency for 2,048 tokens per request: 742.00x
+(EngineCore pid=9018) 2026-07-03 10:17:52,188 - INFO - autotuner.py:457 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=9018) 2026-07-03 10:17:55,640 - INFO - autotuner.py:466 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=9018) INFO 07-03 10:17:55 [core.py:306] init engine (profile, create kv cache, warmup model) took 6.14 s
+(EngineCore pid=9018) INFO 07-03 10:17:56 [vllm.py:840] Asynchronous scheduling is enabled.
+(EngineCore pid=9018) WARNING 07-03 10:17:56 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=9018) WARNING 07-03 10:17:56 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+WARNING 07-03 10:17:56 [interface.py:686] Using 'pin_memory=False' as WSL is detected. This may slow down the performance.
+(EngineCore pid=9018) INFO 07-03 10:17:56 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+(EngineCore pid=9018) INFO 07-03 10:17:56 [vllm.py:1089] Cudagraph is disabled under eager mode
+(EngineCore pid=9018) INFO 07-03 10:17:56 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+
+[C] vLLM 批处理（内置 continuous batching）...
+Rendering prompts: 100%|█████████████████████████████████████████████████████████████| 50/50 [00:00<00:00, 3642.09it/s]
+Processed prompts: 100%|█████████| 50/50 [01:08<00:00,  1.36s/it, est. speed input: 19.01 toks/s, output: 51.29 toks/s]
+(EngineCore pid=9018) INFO 07-03 10:19:04 [core.py:1238] Shutdown initiated (timeout=0)
+(EngineCore pid=9018) INFO 07-03 10:19:04 [core.py:1261] Shutdown complete
+[rank0]:[W703 10:19:05.743070681 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+======================================================================
+  结果汇总
+======================================================================
+模式                            总耗时         QPS       tokens/s    相对vLLM
+--------------------------------------------------------------------------------
+[A] transformers 串行          34.99s      1.43        100       1.95×
+[B] transformers batch=8      9.25s      5.41        377       7.36×
+[C] vLLM 批处理                 68.10s      0.73         51       1.00×
+
+JSON 结果保存：/mnt/d/Badou learning/作业/week09/vllm_deployment/src/../outputs/throughput_results.json
+
+柱状图已保存：/mnt/d/Badou learning/作业/week09/vllm_deployment/src/../outputs/throughput_comparison.png
+
+======================================================================
+  核心结论：
+    vLLM 相对 transformers 串行加速：0.5×
+    vLLM 相对 transformers batch:    0.1×
+    关键机制：PagedAttention + continuous batching
+======================================================================

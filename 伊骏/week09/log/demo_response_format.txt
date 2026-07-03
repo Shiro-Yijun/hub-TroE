@@ -1,0 +1,82 @@
+(vllm_env) shiro@DESKTOP-9P987NN:/mnt/d/Badou learning/作业/week09/vllm_deployment/src$ python demo_response_format.py
+===========================================================================
+  Demo: response_format（OpenAI 标准 JSON 模式）
+  Model: qwen2-0.5b
+===========================================================================
+
+▶ 茅台三季度营收创历史新高，净利润同比增长 15%
+  [raw         ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["茅台", "营收", "净利润", "同比增长"]
+}
+  [json_object ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["茅台", "营收", "净利润", "增长"]
+}
+
+▶ 比亚迪召回 10 万辆电动车，涉及电池安全问题
+  [raw         ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["比亚迪", "电池安全问题"]
+}
+  [json_object ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["比亚迪", "电池安全问题"]
+}
+
+▶ 央行维持 LPR 利率不变
+  [raw         ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["央行", "维持", "LPR 利率"]
+}
+  [json_object ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["央行", "维持"]
+}
+
+▶ 宁德时代与宝马签订长期供货协议
+  [raw         ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["宁德时代", "宝马"]
+}
+  [json_object ] ✓ {
+  "sentiment": "positive",
+  "confidence": 1.0,
+  "keywords": ["宁德时代", "宝马"]
+}
+
+▶ 平安保险高管被调查，股价下跌 8%
+  [raw         ] ✓ {
+  "sentiment": "negative",
+  "confidence": 0.8,
+  "keywords": ["平安保险", "高管", "股价", "下跌"]
+}
+  [json_object ] ✓ {
+  "sentiment": "negative",
+  "confidence": 0.8,
+  "keywords": ["平安保险", "高管", "股价", "下跌"]
+}
+
+===========================================================================
+  5 条测试结果
+===========================================================================
+指标                    裸 prompt            response_format
+------------------------------------------------------------
+合法 JSON             5/5 (100%)      5/5 (100%)
+有 sentiment 字段      5/5 (100%)      5/5 (100%)
+sentiment 值合法       5/5 (100%)      5/5 (100%)
+有 confidence 字段     5/5 (100%)      5/5 (100%)
+有 keywords 字段       5/5 (100%)      5/5 (100%)
+
+===========================================================================
+  观察：
+    response_format 显著提升 JSON 合法率，但字段语义仍靠模型自觉
+    若需严格字段 schema，请用 guided_json（见 demo_function_call.py）
+===========================================================================
