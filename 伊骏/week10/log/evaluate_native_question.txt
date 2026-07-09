@@ -1,0 +1,96 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python evaluation/evaluate.py --pipeline native --question-ids 1,2,3
+2026-07-09 11:16:55,065 [INFO] 加载 3 道测试题
+2026-07-09 11:16:55,621 [INFO] 初始化原生 RAG Pipeline...
+2026-07-09 11:16:55,678 [INFO] Loading faiss with AVX512 support.
+2026-07-09 11:16:55,678 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 11:16:55,678 [INFO] Loading faiss with AVX2 support.
+2026-07-09 11:16:55,679 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 11:16:55,679 [INFO] Loading faiss.
+2026-07-09 11:16:55,690 [INFO] Successfully loaded faiss.
+2026-07-09 11:16:55,756 [INFO] FAISS 索引加载完成，共 10353 条向量
+C:\ProgramData\anaconda3\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-07-09 11:16:55,909 [INFO] 构建 BM25 索引（分词中，请稍候）...
+Building prefix dict from the default dictionary ...
+2026-07-09 11:16:55,909 [DEBUG] Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+2026-07-09 11:16:55,910 [DEBUG] Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.277 seconds.
+2026-07-09 11:16:56,186 [DEBUG] Loading model cost 0.277 seconds.
+Prefix dict has been built successfully.
+2026-07-09 11:16:56,186 [DEBUG] Prefix dict has been built successfully.
+2026-07-09 11:17:01,390 [INFO] BM25 索引完成
+2026-07-09 11:17:01,413 [INFO] [01] 贵州茅台2023年的营业收入是多少？...
+2026-07-09 11:17:01,990 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:02,889 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:02,894 [INFO] [02] 中国平安2022年的归属于母公司股东的净利润是多少？...
+2026-07-09 11:17:03,161 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:04,081 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:04,082 [INFO] [03] 宁德时代2021年的营业收入是多少？...
+2026-07-09 11:17:04,297 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:05,178 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+── 按题型统计 ──
+  simple_fact               题数=3  拒绝率=0%  平均回答长度=36字
+2026-07-09 11:17:05,558 [INFO] Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-07-09 11:17:05,558 [INFO] NumExpr defaulting to 16 threads.
+D:\Badou learning\Homework\week10\rag_annual_report\evaluation\evaluate.py:163: DeprecationWarning: Importing faithfulness from 'ragas.metrics' is deprecated and will be removed in v1.0. Please use 'ragas.metrics.collections' instead. Example: from ragas.metrics.collections import faithfulness
+  from ragas.metrics import (
+D:\Badou learning\Homework\week10\rag_annual_report\evaluation\evaluate.py:163: DeprecationWarning: Importing answer_relevancy from 'ragas.metrics' is deprecated and will be removed in v1.0. Please use 'ragas.metrics.collections' instead. Example: from ragas.metrics.collections import answer_relevancy
+  from ragas.metrics import (
+D:\Badou learning\Homework\week10\rag_annual_report\evaluation\evaluate.py:163: DeprecationWarning: Importing context_precision from 'ragas.metrics' is deprecated and will be removed in v1.0. Please use 'ragas.metrics.collections' instead. Example: from ragas.metrics.collections import context_precision    
+  from ragas.metrics import (
+D:\Badou learning\Homework\week10\rag_annual_report\evaluation\evaluate.py:163: DeprecationWarning: Importing context_recall from 'ragas.metrics' is deprecated and will be removed in v1.0. Please use 'ragas.metrics.collections' instead. Example: from ragas.metrics.collections import context_recall
+  from ragas.metrics import (
+2026-07-09 11:17:09,288 [INFO] 开始 RAGAS 评估（native）...
+2026-07-09 11:17:09,288 [INFO] langchain-openai detected system proxy configuration and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+D:\Badou learning\Homework\week10\rag_annual_report\evaluation\evaluate.py:177: DeprecationWarning: LangchainLLMWrapper is deprecated and will be removed in a future version. Use llm_factory instead: from openai import OpenAI; from ragas.llms import llm_factory; llm = llm_factory('gpt-4o-mini', client=OpenAI(api_key='...'))
+  ragas_llm = LangchainLLMWrapper(ChatOpenAI(
+D:\Badou learning\Homework\week10\rag_annual_report\evaluation\evaluate.py:185: DeprecationWarning: LangchainEmbeddingsWrapper is deprecated and will be removed in a future version. Use the modern embedding providers instead: embedding_factory('openai', model='text-embedding-3-small', client=openai_client) or from ragas.embeddings import OpenAIEmbeddings, GoogleEmbeddings, HuggingFaceEmbeddings
+  ragas_embeddings = LangchainEmbeddingsWrapper(OpenAIEmbeddings(
+Evaluating:   0%|                                                                                                                                                                                                                                                                           | 0/12 [00:00<?, ?it/s]2026-07-09 11:17:12,505 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:13,522 [WARNING] LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-07-09 11:17:14,843 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:16,026 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+Evaluating:   8%|█████████████████████▌                                                                                                                                                                                                                                             | 1/12 [00:06<01:13,  6.67s/it]2026-07-09 11:17:17,048 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,049 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,049 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,050 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,050 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,050 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,051 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,051 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:17,051 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:18,076 [WARNING] LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-07-09 11:17:19,454 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:20,596 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:26,740 [WARNING] LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-07-09 11:17:28,125 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:17:29,405 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+Evaluating:  17%|███████████████████████████████████████████▏                                                                                                                                                                                                                       | 2/12 [00:28<02:34, 15.42s/it]2026-07-09 11:17:40,625 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:40,625 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:42,660 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+Evaluating:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                 | 6/12 [00:34<00:28,  4.71s/it]2026-07-09 11:17:44,696 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+Evaluating:  67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                      | 8/12 [00:38<00:14,  3.64s/it]2026-07-09 11:17:48,752 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:48,753 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+Evaluating:  75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                | 9/12 [00:42<00:11,  3.75s/it]2026-07-09 11:17:52,832 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:52,832 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:56,904 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:17:59,581 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:18:01,602 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:18:03,642 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+Evaluating:  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                           | 10/12 [00:55<00:12,  6.15s/it]2026-07-09 11:18:05,668 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+Evaluating:  92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                     | 11/12 [00:57<00:05,  5.02s/it]2026-07-09 11:18:07,708 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 12/12 [00:59<00:00,  4.95s/it]
+2026-07-09 11:18:11,759 [INFO] 
+==================================================
+2026-07-09 11:18:11,759 [INFO] RAGAS 评估结果 - native
+2026-07-09 11:18:11,759 [INFO] ==================================================
+2026-07-09 11:18:11,759 [INFO]   Faithfulness（忠实度）:       1.0000
+2026-07-09 11:18:11,759 [INFO]   Answer Relevancy（答案相关性）: 0.6232
+2026-07-09 11:18:11,759 [INFO]   Context Precision（上下文精确率）:0.4167
+2026-07-09 11:18:11,759 [INFO]   Context Recall（上下文召回率）:  0.6667
+2026-07-09 11:18:11,760 [INFO] 详细结果已保存 → D:\Badou learning\Homework\week10\rag_annual_report\evaluation\results\native_20260709_111811.json
+2026-07-09 11:18:11,762 [INFO] CSV 摘要已保存 → D:\Badou learning\Homework\week10\rag_annual_report\evaluation\results\native_20260709_111811.csv

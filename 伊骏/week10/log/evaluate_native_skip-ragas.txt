@@ -1,0 +1,91 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python evaluation/evaluate.py --pipeline native --skip-ragas
+2026-07-09 11:19:32,592 [INFO] 加载 20 道测试题
+2026-07-09 11:19:33,146 [INFO] 初始化原生 RAG Pipeline...
+2026-07-09 11:19:33,203 [INFO] Loading faiss with AVX512 support.
+2026-07-09 11:19:33,204 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 11:19:33,204 [INFO] Loading faiss with AVX2 support.
+2026-07-09 11:19:33,204 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 11:19:33,204 [INFO] Loading faiss.
+2026-07-09 11:19:33,214 [INFO] Successfully loaded faiss.
+2026-07-09 11:19:33,281 [INFO] FAISS 索引加载完成，共 10353 条向量
+C:\ProgramData\anaconda3\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-07-09 11:19:33,434 [INFO] 构建 BM25 索引（分词中，请稍候）...
+Building prefix dict from the default dictionary ...
+2026-07-09 11:19:33,434 [DEBUG] Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+2026-07-09 11:19:33,435 [DEBUG] Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.270 seconds.
+2026-07-09 11:19:33,704 [DEBUG] Loading model cost 0.270 seconds.
+Prefix dict has been built successfully.
+2026-07-09 11:19:33,705 [DEBUG] Prefix dict has been built successfully.
+2026-07-09 11:19:38,886 [INFO] BM25 索引完成
+2026-07-09 11:19:38,909 [INFO] [01] 贵州茅台2023年的营业收入是多少？...
+2026-07-09 11:19:39,528 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:40,663 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:40,667 [INFO] [02] 中国平安2022年的归属于母公司股东的净利润是多少？...
+2026-07-09 11:19:40,958 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:42,063 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:42,064 [INFO] [03] 宁德时代2021年的营业收入是多少？...
+2026-07-09 11:19:42,306 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:44,070 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:44,071 [INFO] [04] 海康威视2023年的营业总收入是多少？...
+2026-07-09 11:19:44,196 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:45,230 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:45,230 [INFO] [05] 五粮液2023年年度报告中披露的基本每股收益是多少元？...
+2026-07-09 11:19:45,487 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:47,079 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:47,079 [INFO] [06] 贵州茅台2023年实现归属于上市公司股东的净利润具体是多少亿元？同比增长多少？...
+2026-07-09 11:19:47,203 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:48,297 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:48,297 [INFO] [07] 宁德时代2021年的研发费用是多少亿元？占当年营业收入的比例是多少？...
+2026-07-09 11:19:48,436 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:49,747 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:49,748 [INFO] [08] 海康威视2022年研发投入的具体金额是多少？...
+2026-07-09 11:19:50,000 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:52,871 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:52,872 [INFO] [09] 中国平安2021年保险业务收入总额是多少？...
+2026-07-09 11:19:53,021 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:19:57,576 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:19:57,577 [INFO] [10] 五粮液2022年实现归属于上市公司股东的净利润是多少亿元？...
+2026-07-09 11:19:57,710 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:02,749 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:02,750 [INFO] [11] 比较贵州茅台和五粮液2022年的销售毛利率，哪家公司更高？分别是多少？...
+2026-07-09 11:20:02,889 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:07,926 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:07,926 [INFO] [12] 2023年宁德时代和海康威视的研发费用率（研发费用/营业收入）分别是多少？哪家更...
+2026-07-09 11:20:08,034 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:13,704 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:13,705 [INFO] [13] 中国平安和宁德时代在各自2022年年报中，分别提到了哪些主要的经营风险？...
+2026-07-09 11:20:13,830 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:26,461 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:26,461 [INFO] [14] 海康威视在2021年、2022年年报中，对人工智能业务的描述有何变化？...
+2026-07-09 11:20:26,693 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:33,689 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:33,690 [INFO] [15] 贵州茅台2021年至2023年营业收入的变化趋势如何？三年的具体数值和同比增长率...
+2026-07-09 11:20:33,925 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:40,957 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:40,958 [INFO] [16] 宁德时代2021年到2023年营业收入增长了多少倍？...
+2026-07-09 11:20:41,073 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:48,401 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:48,401 [INFO] [17] 海康威视2021年至2023年的研发投入金额逐年变化情况是怎样的？...
+2026-07-09 11:20:48,559 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:53,623 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:53,624 [INFO] [18] 目前贵州茅台的股价是多少？今天适合买入吗？...
+2026-07-09 11:20:53,906 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:20:57,548 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:20:57,549 [INFO] [19] 宁德时代CEO的个人财富排名是多少？...
+2026-07-09 11:20:57,702 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:21:00,703 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 11:21:00,704 [INFO] [20] 中国平安未来三年的股息分配计划是什么？...
+2026-07-09 11:21:00,950 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 11:21:09,554 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+── 按题型统计 ──
+  simple_fact               题数=5  拒绝率=0%  平均回答长度=43字
+  precise_number            题数=5  拒绝率=40%  平均回答长度=198字
+  cross_doc_compare         题数=4  拒绝率=100%  平均回答长度=540字
+  time_trend                题数=3  拒绝率=0%  平均回答长度=520字
+  should_refuse             题数=3  拒绝率=67%  平均回答长度=348字

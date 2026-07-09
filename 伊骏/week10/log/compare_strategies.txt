@@ -1,0 +1,57 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python evaluation/compare_strategies.py
+2026-07-09 12:17:54,319 [INFO] 消融实验: 10 道题  策略=['semantic']  检索方式=['vector_only', 'hybrid']
+2026-07-09 12:17:54,319 [INFO] 
+── 加载策略: semantic ──
+2026-07-09 12:17:54,355 [INFO] Loading faiss with AVX512 support.
+2026-07-09 12:17:54,355 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 12:17:54,356 [INFO] Loading faiss with AVX2 support.
+2026-07-09 12:17:54,356 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 12:17:54,356 [INFO] Loading faiss.
+2026-07-09 12:17:54,367 [INFO] Successfully loaded faiss.
+2026-07-09 12:17:54,372 [WARNING] 未找到 D:\Badou learning\Homework\week10\rag_annual_report\vectorstore\faiss_semantic，使用默认索引路径（semantic 策略）
+2026-07-09 12:17:54,437 [INFO]   检索方式: vector_only
+2026-07-09 12:17:55,548 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:55,688 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:55,820 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:56,071 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:56,213 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:56,453 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:56,687 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:56,843 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:57,057 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:57,329 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:17:57,331 [INFO]     Hit@4=0.700  MRR=0.583
+2026-07-09 12:17:57,331 [INFO]   检索方式: hybrid
+2026-07-09 12:17:57,484 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+C:\ProgramData\anaconda3\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Building prefix dict from the default dictionary ...
+2026-07-09 12:17:57,579 [DEBUG] Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+2026-07-09 12:17:57,579 [DEBUG] Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.270 seconds.
+2026-07-09 12:17:57,849 [DEBUG] Loading model cost 0.270 seconds.
+Prefix dict has been built successfully.
+2026-07-09 12:17:57,849 [DEBUG] Prefix dict has been built successfully.
+2026-07-09 12:18:03,397 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:09,359 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:15,238 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:21,364 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:27,314 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:33,280 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:39,381 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:45,199 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:51,072 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 12:18:56,599 [INFO]     Hit@4=0.800  MRR=0.525
+
+======================================================================
+消融实验结果汇总（Top-4）
+======================================================================
+分块策略            检索方式              Hit Rate        MRR     题数
+----------------------------------------------------------------------
+semantic        hybrid               0.800      0.525     10
+semantic        vector_only          0.700      0.583     10
+======================================================================
+2026-07-09 12:18:56,600 [INFO] 结果已保存 → D:\Badou learning\Homework\week10\rag_annual_report\evaluation\results\ablation_results.json

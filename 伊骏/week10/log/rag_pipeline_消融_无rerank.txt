@@ -1,0 +1,43 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python src/rag_pipeline.py --query "..." --no-rerank
+2026-07-09 09:26:17,076 [INFO] Loading faiss with AVX512 support.
+2026-07-09 09:26:17,076 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 09:26:17,076 [INFO] Loading faiss with AVX2 support.
+2026-07-09 09:26:17,077 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 09:26:17,077 [INFO] Loading faiss.
+2026-07-09 09:26:17,088 [INFO] Successfully loaded faiss.
+2026-07-09 09:26:17,155 [INFO] FAISS 索引加载完成，共 10353 条向量
+C:\ProgramData\anaconda3\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-07-09 09:26:17,305 [INFO] 构建 BM25 索引（分词中，请稍候）...
+Building prefix dict from the default dictionary ...
+2026-07-09 09:26:17,305 [DEBUG] Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+2026-07-09 09:26:17,306 [DEBUG] Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.269 seconds.
+2026-07-09 09:26:17,574 [DEBUG] Loading model cost 0.269 seconds.
+Prefix dict has been built successfully.
+2026-07-09 09:26:17,574 [DEBUG] Prefix dict has been built successfully.
+2026-07-09 09:26:22,801 [INFO] BM25 索引完成
+2026-07-09 09:26:23,409 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 09:26:23,411 [INFO] 向量召回: 10 条，最高分=0.645
+2026-07-09 09:26:23,415 [INFO] BM25 召回: 0 条，RRF 后: 10 条
+2026-07-09 09:26:23,415 [INFO] 最终使用 4 条上下文
+2026-07-09 09:26:26,208 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+============================================================
+问题：...
+============================================================
+
+根据提供的参考资料，信息过于简略，仅包含页码、公司代码（如601318、000858）、年份、部分标题及零散数字（如442,891、480,472）或关键词（如“科技业务”），但未给出具体财务数据、指标定义或上下文内容。
+
+因此，**无法回答具体问题**（问题本身为空，且参考资料中无可供分析的实质性财务数据或结论性陈述）。
+
+如需解答，请提供明确问题（例如：“2022年营业收入是多少？”）并确保参考资料中包含对应数据。
+
+── 来源 ──
+  [1] 601318 2022年报 · 目录 > 释义 > 重要提示 > 442,891 · 第66页
+  [2] 000858 2023年报 · 宜宾五粮液股份有限公司 > 第十节 财务报告 > 三、本期增 · 第66页
+  [3] 601318 2023年报 · 目录 > 释义 > 重要提示 > 480,472 · 第64页
+  [4] 601318 2022年报 · 目录 > 释义 > 重要提示 > 科技业务 · 第49页

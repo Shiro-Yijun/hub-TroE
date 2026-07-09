@@ -1,0 +1,93 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python src/rag_pipeline.py --query "茅台最近怎么样" --query-rewrite
+2026-07-09 09:15:34,977 [INFO] Loading faiss with AVX512 support.
+2026-07-09 09:15:34,978 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 09:15:34,978 [INFO] Loading faiss with AVX2 support.
+2026-07-09 09:15:34,978 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 09:15:34,978 [INFO] Loading faiss.
+2026-07-09 09:15:34,990 [INFO] Successfully loaded faiss.
+2026-07-09 09:15:35,058 [INFO] FAISS 索引加载完成，共 10353 条向量
+C:\ProgramData\anaconda3\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-07-09 09:15:35,208 [INFO] 构建 BM25 索引（分词中，请稍候）...
+Building prefix dict from the default dictionary ...
+2026-07-09 09:15:35,208 [DEBUG] Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+2026-07-09 09:15:35,209 [DEBUG] Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.285 seconds.
+2026-07-09 09:15:35,493 [DEBUG] Loading model cost 0.285 seconds.
+Prefix dict has been built successfully.
+2026-07-09 09:15:35,494 [DEBUG] Prefix dict has been built successfully.
+2026-07-09 09:15:40,713 [INFO] BM25 索引完成
+2026-07-09 09:15:41,386 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-09 09:15:41,389 [INFO] 查询改写: '茅台最近怎么样' → '茅台2023年财务表现如何？'
+2026-07-09 09:15:41,665 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 09:15:41,668 [INFO] 向量召回: 10 条，最高分=0.713
+2026-07-09 09:15:41,684 [INFO] BM25 召回: 10 条，RRF 后: 20 条
+2026-07-09 09:15:44,880 [INFO] Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-07-09 09:15:44,880 [INFO] NumExpr defaulting to 16 threads.
+2026-07-09 09:15:47,168 [INFO] No device provided, using cuda:0
+2026-07-09 09:15:48,155 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:15:48,156 [INFO] No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+2026-07-09 09:15:48,436 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+2026-07-09 09:15:48,720 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:48,927 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:15:49,207 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 09:15:49,208 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 09:15:49,477 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:49,679 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:15:49,958 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:50,157 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 201/201 [00:00<00:00, 18401.69it/s]
+XLMRobertaForSequenceClassification LOAD REPORT from: BAAI/bge-reranker-base
+Key                             | Status     | Details
+--------------------------------+------------+--------
+roberta.embeddings.position_ids | UNEXPECTED |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-07-09 09:15:50,471 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:15:50,743 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:15:51,016 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:15:51,289 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:15:51,561 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:51,762 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 09:15:52,032 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:52,234 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:15:52,504 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:52,704 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:15:52,976 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:15:53,175 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 09:15:53,452 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 09:15:53,723 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 09:15:55,426 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+Batches: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  5.07it/s]
+2026-07-09 09:15:56,047 [INFO] 最终使用 4 条上下文
+2026-07-09 09:16:03,331 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+============================================================
+问题：茅台最近怎么样
+============================================================
+
+根据提供的参考资料，贵州茅台（600519）最近经营和发展情况如下：
+
+- **2023年实际经营业绩**：2023年度营业收入为**14,769,360.50万元**（即约**1476.94亿元**）[4]。该数据是已审计的财务结果，反映公司核心业务保持强劲。
+
+- **2024年经营目标**：计划实现**营业总收入较2023年增长15%左右**，同时完成**固定资产投资61.79亿元**[2]。相较2023年设定的71.09亿元基建投资目标[1]，2024年投资额有所下调，可能反映项目建设节奏优化或阶段性调整。
+
+- **战略路径升级**：2024年明确推进“**蓝线、绿线、白线**”三条发展道路：
+  - **蓝线**聚焦主业根基，巩固茅台酒“千亿级大单品”地位，强化酱香系列酒品牌培育；
+  - **绿线**突出ESG可持续发展，践行“山水林土河微”生命共同体理念，建设国家级“两山”实践创新基地；
+  - **白线**强调改革创新，推动“智慧茅台2.0”落地，加快营销、供应链、质量管理系统数字化[2]。
+
+- **关联交易与资金运作**：2023年末对关联方发放贷款及垫款账面价值为**545,845,445.44元**；同期利息收入合计**65,254,164.33元**；此外，公司在贵州银行存款余额达**2,409,693.12万元**，显示充裕现金储备和稳健金融运作[3]。
+
+综上，贵州茅台持续以高质量发展为主线，营收规模稳居行业顶端，战略从传统生产向数字化、绿色化、治理现代化纵深拓展，整体呈现稳中有进、动能转换加快的良好态势。
+
+── 来源 ──
+  [1] 600519 2022年报 · 1 / 127 > 第三节 > 六、公司关于公司未来发展的讨论与分析 > (三)经营计划 · 第19页
+  [2] 600519 2023年报 · 1 / 143 > 第三节 > 六、公司关于公司未来发展的讨论与分析 > (三)经营计划 · 第20页
+  [3] 600519 2023年报 · 1 / 143 > 第十节 > 二、非持续的公允 > 135 / 143 · 第135页
+  [4] 600519 2023年报 · 1 / 143 > 第十节 > 三、关键审计事项 > 56 / 143 · 第56页

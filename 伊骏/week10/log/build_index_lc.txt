@@ -1,0 +1,63 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python src_langchain/build_index_lc.py
+D:\Badou learning\Homework\week10\rag_annual_report\src_langchain\build_index_lc.py:42: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+  from langchain_community.document_loaders import PyMuPDFLoader
+2026-07-09 09:32:26,567 [INFO] Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-07-09 09:32:26,568 [INFO] NumExpr defaulting to 16 threads.
+2026-07-09 09:32:30,242 [INFO] 加载: 000858_2021_五粮液_2021年年度报告.pdf
+2026-07-09 09:32:30,644 [INFO]   → 156 页
+2026-07-09 09:32:30,644 [INFO] 加载: 000858_2022_五粮液_2022年年度报告.pdf
+2026-07-09 09:32:30,814 [INFO]   → 147 页
+2026-07-09 09:32:30,814 [INFO] 加载: 000858_2023_五粮液_2023年年度报告.pdf
+2026-07-09 09:32:31,125 [INFO]   → 150 页
+2026-07-09 09:32:31,125 [INFO] 加载: 002415_2021_海康威视_2021年年度报告.pdf
+2026-07-09 09:32:31,390 [INFO]   → 278 页
+2026-07-09 09:32:31,390 [INFO] 加载: 002415_2022_海康威视_2022年年度报告.pdf
+2026-07-09 09:32:31,766 [INFO]   → 259 页
+2026-07-09 09:32:31,766 [INFO] 加载: 002415_2023_海康威视_2023年年度报告.pdf
+2026-07-09 09:32:32,023 [INFO]   → 278 页
+2026-07-09 09:32:32,023 [INFO] 加载: 300750_2021_宁德时代_2021年年度报告.pdf
+2026-07-09 09:32:32,438 [INFO]   → 234 页
+2026-07-09 09:32:32,438 [INFO] 加载: 300750_2022_宁德时代_2022年年度报告.pdf
+2026-07-09 09:32:32,818 [INFO]   → 209 页
+2026-07-09 09:32:32,818 [INFO] 加载: 300750_2023_宁德时代_2023年年度报告.pdf
+2026-07-09 09:32:33,242 [INFO]   → 231 页
+2026-07-09 09:32:33,242 [INFO] 加载: 600519_2021_贵州茅台_贵州茅台2021年年度报告.pdf
+2026-07-09 09:32:33,463 [INFO]   → 124 页
+2026-07-09 09:32:33,463 [INFO] 加载: 600519_2022_贵州茅台_贵州茅台2022年年度报告.pdf
+2026-07-09 09:32:33,681 [INFO]   → 127 页
+2026-07-09 09:32:33,681 [INFO] 加载: 600519_2023_贵州茅台_贵州茅台2023年年度报告.pdf
+2026-07-09 09:32:33,920 [INFO]   → 143 页
+2026-07-09 09:32:33,920 [INFO] 加载: 601318_2021_中国平安_中国平安2021年年度报告.pdf
+2026-07-09 09:32:34,548 [INFO]   → 358 页
+2026-07-09 09:32:34,549 [INFO] 加载: 601318_2022_中国平安_中国平安2022年年度报告.pdf
+2026-07-09 09:32:35,163 [INFO]   → 334 页
+2026-07-09 09:32:35,163 [INFO] 加载: 601318_2023_中国平安_中国平安2023年年度报告.pdf
+2026-07-09 09:32:35,775 [INFO]   → 334 页
+2026-07-09 09:32:35,775 [INFO] 共加载 3362 页（来自 15 个文件）
+2026-07-09 09:32:35,987 [INFO] 分块完成：3362 页 → 10506 个 chunk
+2026-07-09 09:32:35,989 [INFO] 平均 chunk 长度：364 字符
+2026-07-09 09:32:36,034 [INFO] Loading SentenceTransformer model from D:\Badou learning\Homework\week10\rag_annual_report\models\bge-small-zh-v1.5.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 71/71 [00:00<00:00, 12014.67it/s]
+BertModel LOAD REPORT from: D:\Badou learning\Homework\week10\rag_annual_report\models\bge-small-zh-v1.5
+Key                     | Status     | Details
+------------------------+------------+--------
+embeddings.position_ids | UNEXPECTED |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-07-09 09:32:36,104 [INFO] Embedding 模型加载完成: D:\Badou learning\Homework\week10\rag_annual_report\models\bge-small-zh-v1.5
+2026-07-09 09:32:36,113 [INFO] 构建向量库（10506 个 chunk）...
+2026-07-09 09:34:38,669 [INFO] Loading faiss with AVX512 support.
+2026-07-09 09:34:38,669 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 09:34:38,669 [INFO] Loading faiss with AVX2 support.
+2026-07-09 09:34:38,669 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 09:34:38,669 [INFO] Loading faiss.
+2026-07-09 09:34:38,708 [INFO] Successfully loaded faiss.
+2026-07-09 09:34:38,947 [INFO] 向量库已保存 → D:\Badou learning\Homework\week10\rag_annual_report\vectorstore\faiss_lc
+2026-07-09 09:34:38,947 [INFO]   index.faiss: 21012 KB
+
+LangChain 向量库构建完成！
+  路径: D:\Badou learning\Homework\week10\rag_annual_report\vectorstore\faiss_lc
+  下一步: python src_langchain/rag_chain_lc.py

@@ -1,0 +1,67 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python src/rag_pipeline.py --query "..." --no-bm25
+2026-07-09 09:22:25,694 [INFO] Loading faiss with AVX512 support.
+2026-07-09 09:22:25,694 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 09:22:25,694 [INFO] Loading faiss with AVX2 support.
+2026-07-09 09:22:25,694 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 09:22:25,694 [INFO] Loading faiss.
+2026-07-09 09:22:25,705 [INFO] Successfully loaded faiss.
+2026-07-09 09:22:25,773 [INFO] FAISS 索引加载完成，共 10353 条向量
+2026-07-09 09:22:26,445 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 09:22:26,447 [INFO] 向量召回: 10 条，最高分=0.645
+2026-07-09 09:22:29,591 [INFO] Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-07-09 09:22:29,592 [INFO] NumExpr defaulting to 16 threads.
+2026-07-09 09:22:31,862 [INFO] No device provided, using cuda:0
+2026-07-09 09:22:32,989 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:22:32,990 [INFO] No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+2026-07-09 09:22:33,334 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+2026-07-09 09:22:33,623 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:33,831 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:22:34,317 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 09:22:34,317 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 09:22:34,610 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:34,814 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:22:35,131 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:35,335 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 201/201 [00:00<00:00, 22764.97it/s]
+XLMRobertaForSequenceClassification LOAD REPORT from: BAAI/bge-reranker-base
+Key                             | Status     | Details
+--------------------------------+------------+--------
+roberta.embeddings.position_ids | UNEXPECTED |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-07-09 09:22:35,656 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:22:35,942 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:22:36,252 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:22:36,530 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:22:36,836 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:37,040 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 09:22:37,318 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:37,522 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:22:37,797 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:38,002 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:22:38,278 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:22:38,481 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 09:22:38,760 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 09:22:39,044 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 09:22:40,665 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+Batches: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  5.99it/s]
+2026-07-09 09:22:41,272 [INFO] 最终使用 4 条上下文
+2026-07-09 09:22:43,335 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+============================================================
+问题：...
+============================================================
+
+根据提供的参考资料，信息过于简略，仅包含页码、公司代码、年报年份及零散关键词（如“442,891”“480,472”“科技业务”），未给出具体财务数据、指标含义或上下文说明。因此，无法从中提取有效信息以回答任何实质性问题。
+
+**根据提供的资料无法回答此问题**。
+
+── 来源 ──
+  [1] 601318 2022年报 · 目录 > 释义 > 重要提示 > 442,891 · 第66页
+  [2] 000858 2023年报 · 宜宾五粮液股份有限公司 > 第十节 财务报告 > 三、本期增 · 第66页
+  [3] 601318 2023年报 · 目录 > 释义 > 重要提示 > 480,472 · 第64页
+  [4] 601318 2022年报 · 目录 > 释义 > 重要提示 > 科技业务 · 第49页

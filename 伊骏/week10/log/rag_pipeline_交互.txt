@@ -1,0 +1,118 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> python src/rag_pipeline.py
+2026-07-09 09:02:04,888 [INFO] Loading faiss with AVX512 support.
+2026-07-09 09:02:04,888 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 09:02:04,888 [INFO] Loading faiss with AVX2 support.
+2026-07-09 09:02:04,889 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 09:02:04,889 [INFO] Loading faiss.
+2026-07-09 09:02:04,899 [INFO] Successfully loaded faiss.
+2026-07-09 09:02:04,966 [INFO] FAISS 索引加载完成，共 10353 条向量
+C:\ProgramData\anaconda3\Lib\site-packages\jieba\_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-07-09 09:02:05,116 [INFO] 构建 BM25 索引（分词中，请稍候）...
+Building prefix dict from the default dictionary ...
+2026-07-09 09:02:05,117 [DEBUG] Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+2026-07-09 09:02:05,117 [DEBUG] Loading model from cache C:\Users\ADMINI~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.272 seconds.
+2026-07-09 09:02:05,389 [DEBUG] Loading model cost 0.272 seconds.
+Prefix dict has been built successfully.
+2026-07-09 09:02:05,389 [DEBUG] Prefix dict has been built successfully.
+2026-07-09 09:02:10,557 [INFO] BM25 索引完成
+年报 RAG 问答系统（原生版）
+模型：qwen-plus  |  向量库：D:\Badou learning\Homework\week10\rag_annual_report\vectorstore\faiss_index.bin
+输入 'exit' 退出，'mode' 查看当前配置
+
+问题：五粮液2021年的情况如何？
+2026-07-09 09:02:37,010 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-09 09:02:37,013 [INFO] 向量召回: 10 条，最高分=0.785
+2026-07-09 09:02:37,029 [INFO] BM25 召回: 10 条，RRF 后: 20 条
+2026-07-09 09:02:40,166 [INFO] Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-07-09 09:02:40,166 [INFO] NumExpr defaulting to 16 threads.
+2026-07-09 09:02:42,434 [INFO] No device provided, using cuda:0
+2026-07-09 09:02:43,329 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 09:02:43,330 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-09 09:02:43,330 [INFO] No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+2026-07-09 09:02:43,600 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+2026-07-09 09:02:43,882 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:02:44,080 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:02:44,350 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:02:44,617 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:02:44,814 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:02:45,089 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:02:45,287 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:02:45,562 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-07-09 09:02:45,834 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/xet-read-token/2cfc18c9415c912f9d8155881c133215df768a70 "HTTP/1.1 200 OK"
+model.safetensors: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.11G/1.11G [00:19<00:00, 56.7MB/s]
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 201/201 [00:00<00:00, 16835.51it/s]
+XLMRobertaForSequenceClassification LOAD REPORT from: BAAI/bge-reranker-base
+Key                             | Status     | Details
+--------------------------------+------------+--------
+roberta.embeddings.position_ids | UNEXPECTED |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-07-09 09:03:09,016 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:09,283 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:09,552 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:09,820 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:10,110 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:03:10,307 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 09:03:10,516 [INFO] HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+tokenizer_config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 443/443 [00:00<00:00, 3.51MB/s]
+2026-07-09 09:03:10,787 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:03:10,983 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:03:11,252 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:03:11,447 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+2026-07-09 09:03:11,713 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:03:11,909 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-09 09:03:12,177 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:12,452 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-09 09:03:12,725 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+sentencepiece.bpe.model: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5.07M/5.07M [00:01<00:00, 5.01MB/s]
+2026-07-09 09:03:14,009 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+tokenizer.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 17.1M/17.1M [00:00<00:00, 21.2MB/s]
+2026-07-09 09:03:15,085 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:15,355 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-09 09:03:15,555 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-07-09 09:03:15,752 [INFO] HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/special_tokens_map.json "HTTP/1.1 200 OK"
+special_tokens_map.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 279/279 [00:00<00:00, 1.94MB/s]
+2026-07-09 09:03:16,027 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-07-09 09:03:17,704 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+Batches: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.62it/s]
+2026-07-09 09:03:18,429 [INFO] 最终使用 4 条上下文
+2026-07-09 09:03:30,106 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+============================================================
+问题：五粮液2021年的情况如何？
+============================================================
+
+五粮液2021年实现稳中有进的高质量发展，主要情况如下：
+
+- **经营业绩**：2021年实现营业收入662.09亿元，同比增长15.51%；归属于上市公司股东的净利润233.77亿元，同比增长17.15%[1]。
+
+- **产品结构优化**：核心大单品第八代五粮液实现“价稳量升”，终端动销再创新高；成功导入经典五粮液年份酒及牛年纪念酒、步步高升、博鳌纪念酒等个性化产品；系列酒聚焦四大全国性战略品牌，推出五粮春、尖庄1911、虎年生肖酒等新品，清理清退总经销品牌7个、产品509款[1]。
+
+- **质量与工程**：荣获“全国质量奖”，成为业内唯一四度获国家质量管理最高荣誉的企业（1990、2003、2011、2021年）；完成厂前区重大拆迁，4个园区改造项目建成，4个续建项目（如勾储酒库扩能、成品酒包装及智能仓储一体化等）完成主体工程[1]。
+
+- **渠道与营销**：传统终端渠道持续优化，专卖店聚焦“高地市场”和“核心口岸”；线上直销覆盖天猫、京东、微信官方卖场，销售第八代五粮液及系列酒（五粮春、五粮醇、五粮特曲、尖庄）[3]。
+
+- **生产与库存**：
+  - 五粮液产品生产量28,408吨（+9.46%），销售量29,203吨（+3.78%），库存量1,938吨（-29.09%）；
+  - 系列酒产品生产量160,309吨（+20.64%），销售量152,572吨（+15.32%），库存量19,223吨（+67.36%），主要因销售收入大幅增长而增加备货[3]；
+  - 合计商品酒库存量21,161吨（+48.82%），其中成品酒21,161吨、半成品酒（含陶坛基酒）179,396吨[3]。
+
+- **采购与生产模式**：全部白酒产品自主生产，无委托加工；主要采购为市场化采购，原材料及辅料70.57亿元、包装材料22.40亿元、能源5.41亿元；未向合作社或农户采购超30%总金额，主要外购原材料价格同比变动未超30%[3]。
+
+- **财务状况**：截至2021年12月31日，货币资金余额8,233,595.59万元（即823.36亿元），占资产总额的60.71%，其中存放于集团财务公司的存款达346.36亿元[4]。
+
+综上，五粮液2021年在业绩增长、产品升级、品质建设、渠道拓展和数字化转型等方面均取得实质性进展，实现“十四五”良好开局[1]。
+
+── 来源 ──
+  [1] 000858 2021年报 · 宜宾五粮液股份有限公司 > 第三节 管理层讨论与分析 > 四、主营业务分析 · 第11页
+  [2] 000858 2021年报 · 宜宾五粮液股份有限公司 > 第三节 管理层讨论与分析 > 三、 核心竞争力分析 · 第11页
+  [3] 000858 2021年报 · 宜宾五粮液股份有限公司 > 第三节 管理层讨论与分析 > 二、 报告期内公司从事的主要业务 > 宜宾五粮液股份有限公司2021 年度报告全文 · 第10页
+  [4] 000858 2021年报 · 宜宾五粮液股份有限公司 > 第九节 债券相关情况 · 第55页
+问题：

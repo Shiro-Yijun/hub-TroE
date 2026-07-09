@@ -1,0 +1,35 @@
+C:\ProgramData\anaconda3\python.exe "D:\Badou learning\Homework\week10\rag_annual_report\src\chunk_documents.py" 
+2026-07-09 11:32:19,917 [INFO] 分块 000858_2021_五粮液_2021年年度报告.json  策略=hierarchical  blocks=883
+2026-07-09 11:32:19,946 [INFO]   → 1073 个 chunk，已保存 000858_2021_五粮液_2021年年度报告_hierarchical.json
+2026-07-09 11:32:19,953 [INFO] 分块 000858_2022_五粮液_2022年年度报告.json  策略=hierarchical  blocks=803
+2026-07-09 11:32:19,981 [INFO]   → 1107 个 chunk，已保存 000858_2022_五粮液_2022年年度报告_hierarchical.json
+2026-07-09 11:32:19,988 [INFO] 分块 000858_2023_五粮液_2023年年度报告.json  策略=hierarchical  blocks=853
+2026-07-09 11:32:20,016 [INFO]   → 1130 个 chunk，已保存 000858_2023_五粮液_2023年年度报告_hierarchical.json
+2026-07-09 11:32:20,025 [INFO] 分块 002415_2021_海康威视_2021年年度报告.json  策略=hierarchical  blocks=2079
+2026-07-09 11:32:20,067 [INFO]   → 1721 个 chunk，已保存 002415_2021_海康威视_2021年年度报告_hierarchical.json
+2026-07-09 11:32:20,076 [INFO] 分块 002415_2022_海康威视_2022年年度报告.json  策略=hierarchical  blocks=1938
+2026-07-09 11:32:20,112 [INFO]   → 1486 个 chunk，已保存 002415_2022_海康威视_2022年年度报告_hierarchical.json
+2026-07-09 11:32:20,121 [INFO] 分块 002415_2023_海康威视_2023年年度报告.json  策略=hierarchical  blocks=2116
+2026-07-09 11:32:20,158 [INFO]   → 1515 个 chunk，已保存 002415_2023_海康威视_2023年年度报告_hierarchical.json
+2026-07-09 11:32:20,167 [INFO] 分块 300750_2021_宁德时代_2021年年度报告.json  策略=hierarchical  blocks=1730
+2026-07-09 11:32:20,200 [INFO]   → 1327 个 chunk，已保存 300750_2021_宁德时代_2021年年度报告_hierarchical.json
+2026-07-09 11:32:20,210 [INFO] 分块 300750_2022_宁德时代_2022年年度报告.json  策略=hierarchical  blocks=1919
+2026-07-09 11:32:20,246 [INFO]   → 1480 个 chunk，已保存 300750_2022_宁德时代_2022年年度报告_hierarchical.json
+2026-07-09 11:32:20,257 [INFO] 分块 300750_2023_宁德时代_2023年年度报告.json  策略=hierarchical  blocks=2171
+2026-07-09 11:32:20,297 [INFO]   → 1651 个 chunk，已保存 300750_2023_宁德时代_2023年年度报告_hierarchical.json
+2026-07-09 11:32:20,304 [INFO] 分块 600519_2021_贵州茅台_贵州茅台2021年年度报告.json  策略=hierarchical  blocks=1558
+2026-07-09 11:32:20,324 [INFO]   → 820 个 chunk，已保存 600519_2021_贵州茅台_贵州茅台2021年年度报告_hierarchical.json
+2026-07-09 11:32:20,330 [INFO] 分块 600519_2022_贵州茅台_贵州茅台2022年年度报告.json  策略=hierarchical  blocks=1520
+2026-07-09 11:32:20,351 [INFO]   → 804 个 chunk，已保存 600519_2022_贵州茅台_贵州茅台2022年年度报告_hierarchical.json
+2026-07-09 11:32:20,358 [INFO] 分块 600519_2023_贵州茅台_贵州茅台2023年年度报告.json  策略=hierarchical  blocks=1660
+2026-07-09 11:32:20,381 [INFO]   → 871 个 chunk，已保存 600519_2023_贵州茅台_贵州茅台2023年年度报告_hierarchical.json
+2026-07-09 11:32:20,396 [INFO] 分块 601318_2021_中国平安_中国平安2021年年度报告.json  策略=hierarchical  blocks=8211
+2026-07-09 11:32:20,424 [INFO]   → 1074 个 chunk，已保存 601318_2021_中国平安_中国平安2021年年度报告_hierarchical.json
+2026-07-09 11:32:20,438 [INFO] 分块 601318_2022_中国平安_中国平安2022年年度报告.json  策略=hierarchical  blocks=8057
+2026-07-09 11:32:20,466 [INFO]   → 1068 个 chunk，已保存 601318_2022_中国平安_中国平安2022年年度报告_hierarchical.json
+2026-07-09 11:32:20,479 [INFO] 分块 601318_2023_中国平安_中国平安2023年年度报告.json  策略=hierarchical  blocks=7550
+2026-07-09 11:32:20,508 [INFO]   → 1061 个 chunk，已保存 601318_2023_中国平安_中国平安2023年年度报告_hierarchical.json
+2026-07-09 11:32:20,921 [INFO] 
+合并完成：共 18188 个 chunk → D:\Badou learning\Homework\week10\rag_annual_report\data\chunks\all_hierarchical.json
+2026-07-09 11:32:20,924 [INFO] 平均 chunk 长度: 375 字符
+2026-07-09 11:32:20,925 [INFO] 其中表格块: 0  OCR块: 0

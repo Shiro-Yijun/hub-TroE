@@ -1,0 +1,47 @@
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> echo "贵州茅台2023年营业收入是多少" | python src_langchain/rag_chain_lc.py
+2026-07-09 10:00:26,113 [INFO] 加载 embedding 模型...
+2026-07-09 10:00:30,593 [INFO] Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-07-09 10:00:30,593 [INFO] NumExpr defaulting to 16 threads.
+2026-07-09 10:00:32,290 [INFO] Loading SentenceTransformer model from D:\Badou learning\Homework\week10\rag_annual_report\models\bge-small-zh-v1.5.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 71/71 [00:00<00:00, 21225.63it/s]
+BertModel LOAD REPORT from: D:\Badou learning\Homework\week10\rag_annual_report\models\bge-small-zh-v1.5
+Key                     | Status     | Details
+------------------------+------------+--------
+embeddings.position_ids | UNEXPECTED |        
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-07-09 10:00:32,342 [INFO] 加载向量库...
+D:\Badou learning\Homework\week10\rag_annual_report\src_langchain\rag_chain_lc.py:95: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+  from langchain_community.vectorstores import FAISS
+2026-07-09 10:00:32,352 [INFO] Loading faiss with AVX512 support.
+2026-07-09 10:00:32,352 [INFO] Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-07-09 10:00:32,352 [INFO] Loading faiss with AVX2 support.
+2026-07-09 10:00:32,353 [INFO] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-09 10:00:32,353 [INFO] Loading faiss.
+2026-07-09 10:00:32,370 [INFO] Successfully loaded faiss.
+2026-07-09 10:00:32,912 [INFO] langchain-openai detected system proxy configuration and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+年报 RAG 问答系统（LangChain LCEL 版）
+模型：qwen-plus  |  向量库：D:\Badou learning\Homework\week10\rag_annual_report\vectorstore\faiss_lc
+输入 'exit' 退出
+
+问题：
+============================================================
+问题：????2023????????
+============================================================
+2026-07-09 10:00:39,385 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+
+根据提供的参考资料，无法回答“2023年?????????”这一问题，因为问题中存在大量不可识别的占位符（“????”），且未明确具体询问的内容（如：营业收入、净利润、重大担保事项、发展战略、风险因素等）。
+
+参考资料中涉及2023年的信息包括：
+
+- 宁德时代（300750_2023年报）披露了2023年发生的担保事项，如2023年3月10日、5月18日至8月29日期间提供连带责任保证，担保金额分别为318,800.00万元和32,526.26万元（来源：[1] 第84页）；
+- 海康威视（002415_2023年报）披露了2023年4月15日及12月4日对武汉皓榕科技有限公司提供连带责任保证，担保金额分别为30,000.00万元和5,543.48万元（来源：[2] 第136页）；
+- 五粮液（000858_2022年报）提及“2023年公司经营目标：营业总收入继续保持两位数的稳健增长”，但未披露2023年实际完成数据（来源：[4] 第23页）；
+- 贵州茅台年报（[3]）仅显示报告目录，未提供具体财务或经营数据。
+
+综上，**问题表述不完整，无法确定所问具体指标或事项，根据提供的资料无法回答此问题**。
+问题：
+(base) PS D:\Badou learning\Homework\week10\rag_annual_report> 
