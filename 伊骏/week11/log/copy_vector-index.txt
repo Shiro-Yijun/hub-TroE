@@ -1,0 +1,13 @@
+(base) PS D:\Badou learning\Homework\week11\function_call_mcp_cli> python scripts/copy_data.py --src ../rag_annual_report/vectorstore -y
+源目录：D:\Badou learning\Homework\week11\rag_annual_report\vectorstore
+目标目录：D:\Badou learning\Homework\week11\function_call_mcp_cli\vectorstore
+
+  faiss_index.bin           40.4 MB
+  faiss_meta.json           15.0 MB
+
+  合计：55.4 MB
+复制 faiss_index.bin... 完成
+复制 faiss_meta.json... 完成
+
+数据迁移完成，可以运行各方式的脚本了。
+(base) PS D:\Badou learning\Homework\week11\function_call_mcp_cli> 

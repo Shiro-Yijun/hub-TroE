@@ -1,0 +1,2 @@
+(base) PS D:\Badou learning\Homework\week11\function_call_mcp_cli> python -c "from mode_cli.run_cli import run_bash; print(run_bash('rm -rf /'))"
+[run_bash] 沙箱拦截：命中危险模式 '\\brm\\b'

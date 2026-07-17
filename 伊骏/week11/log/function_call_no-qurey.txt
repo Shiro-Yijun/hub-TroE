@@ -1,0 +1,11 @@
+(base) PS D:\Badou learning\Homework\week11\function_call_mcp_cli> python mode_function_call/run_function_call.py -q "..." --provider dashscope
+[rag_backend] 就绪：10353 个向量，10353 条元数据
+[Function Call] provider=dashscope model=qwen-plus
+
+============================================================
+Q1：...
+============================================================
+  → [llm] 最终回答（1.5s）
+
+最终回答：
+请告诉我您具体想了解什么内容？例如某家公司的年报数据（如营收、净利润、研发投入等）、天气信息，或其他问题。我会根据您的需求调用相应工具为您查询。
