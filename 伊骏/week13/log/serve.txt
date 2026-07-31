@@ -1,0 +1,16 @@
+(base) PS D:\Badou learning\Homework\week13\agent_memory_system> uvicorn src.serve:app --host 0.0.0.0 --port 8000
+INFO:     Started server process [33448]
+INFO:     Waiting for application startup.
+INFO:src.serve:服务启动，会话 #32
+INFO:src.serve:FTS5/BM25 可用：True（混合检索)
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:src.scheduler:已注册任务：weekly_compaction  trigger=0 3 * * 0
+INFO:src.scheduler:已加载 1 个 HEARTBEAT 任务
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "HeartbeatScheduler._execute_task" to job store "default"
+INFO:apscheduler.scheduler:Added job "HeartbeatScheduler._check_reload" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:src.scheduler:HeartbeatScheduler 已启动
+INFO:src.serve:HEARTBEAT 调度器已启动
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)

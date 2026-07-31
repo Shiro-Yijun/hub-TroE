@@ -1,0 +1,24 @@
+(base) PS DBadou learningHomeworkweek13agent_memory_system uvicorn src.serveapp --host 0.0.0.0 --port 8000
+INFO     Started server process [33448]
+INFO     Waiting for application startup.
+INFOsrc.serve服务启动，会话 #32
+INFOsrc.serveFTS5BM25 可用：True（混合检索)
+INFOapscheduler.schedulerAdding job tentatively -- it will be properly scheduled when the scheduler starts
+INFOsrc.scheduler已注册任务：weekly_compaction  trigger=0 3   0
+INFOsrc.scheduler已加载 1 个 HEARTBEAT 任务
+INFOapscheduler.schedulerAdding job tentatively -- it will be properly scheduled when the scheduler starts
+INFOapscheduler.schedulerAdded job HeartbeatScheduler._execute_task to job store default
+INFOapscheduler.schedulerAdded job HeartbeatScheduler._check_reload to job store default
+INFOapscheduler.schedulerScheduler started
+INFOsrc.schedulerHeartbeatScheduler 已启动
+INFOsrc.serveHEARTBEAT 调度器已启动
+INFO     Application startup complete.
+INFO     Uvicorn running on http0.0.0.08000 (Press CTRL+C to quit)
+INFOapscheduler.executors.defaultRunning job HeartbeatScheduler._check_reload (trigger interval[00100], next run at 2026-07-29 153647 CST) (scheduled at 2026-07-29 153547.391871+0800)
+INFOapscheduler.executors.defaultJob HeartbeatScheduler._check_reload (trigger interval[00100], next run at 2026-07-29 153647 CST) executed successfully
+INFO     127.0.0.155035 - GET  HTTP1.1 200 OK
+INFO     127.0.0.155035 - GET health HTTP1.1 200 OK
+INFO     127.0.0.155035 - GET memories HTTP1.1 200 OK
+INFO     127.0.0.155035 - GET favicon.ico HTTP1.1 404 Not Found
+INFOsrc.serve[stream] 新连接，当前监听数：1
+INFO     127.0.0.156055 - GET stream HTTP1.1 200 OK    

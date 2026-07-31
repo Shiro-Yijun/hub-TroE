@@ -1,0 +1,20 @@
+(base) PS D:\Badou learning\Homework\week13\agent_memory_system> python src/agent.py                                                                                                                                                                                                                                
+
+Agent 记忆系统 — CLI 演示
+当前模型：DeepSeek V4 Flash  （切换：LLM_PROVIDER=deepseek 或 qwen）
+输入 /flush, /memory, /layers, /new, /exit 查看各功能
+
+
+Skill Harness 初始化完成，已注册技能列表：                                                                                                                                                                                                                                                                          
+  - calculator | 四则计算器 | 标签：['math', 'compute']
+
+────────────────────────────────────────────────────────────                                                                                                                                                                                                                                                        
+  四层记忆加载情况                                                                                                                                                                                                                                                                                                  
+────────────────────────────────────────────────────────────                                                                                                                                                                                                                                                        
+  🧠 Layer 3a  SOUL.md（人格定义）  [464 字符]
+  👤 Layer 3b  USER.md（用户画像）  [215 字符]
+  📋 Layer 3c  AGENTS.md（操作规范）  [950 字符]
+  🔍 Layer 4   混合检索（向量 0.7 + BM25 0.3）  [暂无命中]
+────────────────────────────────────────────────────────────                                                                                                                                                                                                                                                        
+
+你：

@@ -1,0 +1,43 @@
+(base) PS D:\Badou learning\Homework\week13\agent_memory_system> uvicorn src.serve:app --host 0.0.0.0 --port 8000             
+INFO:     Started server process [39548]
+INFO:     Waiting for application startup.
+INFO:src.serve:服务启动，会话 #47
+INFO:src.serve:FTS5/BM25 可用：True（混合检索)
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:src.scheduler:已注册任务：weekly_compaction  trigger=0 3 * * 0
+INFO:src.scheduler:已加载 1 个 HEARTBEAT 任务
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "HeartbeatScheduler._execute_task" to job store "default"
+INFO:apscheduler.scheduler:Added job "HeartbeatScheduler._check_reload" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:src.scheduler:HeartbeatScheduler 已启动
+INFO:src.serve:HEARTBEAT 调度器已启动
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52990 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52990 - "GET /memories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53812 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:src.serve:[/stream] 新连接，当前监听数：1
+INFO:     127.0.0.1:53812 - "GET /stream HTTP/1.1" 200 OK                                                                                                                                                                                                                                                           
+INFO:     127.0.0.1:53814 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53817 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:44:22 CST)" (scheduled at 2026-07-30 22:43:22.510036+08:00)
+INFO:apscheduler.executors.default:Job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:44:22 CST)" executed successfully
+INFO:apscheduler.executors.default:Running job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:45:22 CST)" (scheduled at 2026-07-30 22:44:22.510036+08:00)
+INFO:apscheduler.executors.default:Job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:45:22 CST)" executed successfully
+INFO:apscheduler.executors.default:Running job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:46:22 CST)" (scheduled at 2026-07-30 22:45:22.510036+08:00)
+INFO:apscheduler.executors.default:Job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:46:22 CST)" executed successfully
+INFO:src.serve:[/stream] 新连接，当前监听数：2
+INFO:     127.0.0.1:57716 - "GET /stream HTTP/1.1" 200 OK
+INFO:src.serve:[/stream] 连接断开，剩余监听数：1
+INFO:     127.0.0.1:49183 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:47:22 CST)" (scheduled at 2026-07-30 22:46:22.510036+08:00)
+INFO:apscheduler.executors.default:Job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:47:22 CST)" executed successfully
+INFO:apscheduler.executors.default:Running job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:48:22 CST)" (scheduled at 2026-07-30 22:47:22.510036+08:00)
+INFO:apscheduler.executors.default:Job "HeartbeatScheduler._check_reload (trigger: interval[0:01:00], next run at: 2026-07-30 22:48:22 CST)" executed successfully
+INFO:     127.0.0.1:54039 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
