@@ -1,0 +1,12 @@
+(base) PS D:\Badou learning\Homework\week17\grpo_arithmetic> python src/probe_baseline.py --model outputs/grpo_ckpt --out outputs/post_train_probe.json --seed 42
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 1125.60it/s]
+L1_add_1digit        greedy_loose=1.00 fmt=0.64 loose_acc=0.99 loose_pass@8=1.00 loose_informative=0.04 (2.0s)
+L2_addsub_2digit     greedy_loose=0.98 fmt=0.80 loose_acc=0.96 loose_pass@8=1.00 loose_informative=0.22 (2.2s)
+L3_addsub_3digit     greedy_loose=0.92 fmt=0.78 loose_acc=0.80 loose_pass@8=0.98 loose_informative=0.60 (2.2s)
+L4_mul_1digit        greedy_loose=1.00 fmt=0.08 loose_acc=0.99 loose_pass@8=1.00 loose_informative=0.08 (1.3s)
+L5_mul_2x1digit      greedy_loose=0.94 fmt=0.30 loose_acc=0.82 loose_pass@8=1.00 loose_informative=0.48 (1.6s)
+L6_mul_2x2digit      greedy_loose=0.24 fmt=0.74 loose_acc=0.18 loose_pass@8=0.38 loose_informative=0.32 (2.1s)
+
+结果已保存：outputs\post_train_probe.json
+GPU 峰值显存：1.49 GB
+(base) PS D:\Badou learning\Homework\week17\grpo_arithmetic> 

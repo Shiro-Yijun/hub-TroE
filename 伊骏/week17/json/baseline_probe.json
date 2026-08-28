@@ -1,0 +1,188 @@
+{
+  "L1_add_1digit": {
+    "n": 10,
+    "k": 8,
+    "greedy_format_rate": 0.0,
+    "greedy_strict_acc": 0.0,
+    "greedy_loose_acc": 1.0,
+    "sample_strict_acc": 0.0,
+    "sample_loose_acc": 0.85,
+    "pass@8": 0.0,
+    "loose_pass@8": 1.0,
+    "informative_group_rate": 0.0,
+    "loose_informative_group_rate": 0.5,
+    "elapsed_sec": 0.5,
+    "examples": [
+      {
+        "expr": "2 + 1",
+        "answer": 3,
+        "greedy_output": "3"
+      },
+      {
+        "expr": "5 + 4",
+        "answer": 9,
+        "greedy_output": "9"
+      },
+      {
+        "expr": "4 + 3",
+        "answer": 7,
+        "greedy_output": "7"
+      }
+    ]
+  },
+  "L2_addsub_2digit": {
+    "n": 10,
+    "k": 8,
+    "greedy_format_rate": 0.0,
+    "greedy_strict_acc": 0.0,
+    "greedy_loose_acc": 0.8,
+    "sample_strict_acc": 0.0125,
+    "sample_loose_acc": 0.475,
+    "pass@8": 0.1,
+    "loose_pass@8": 1.0,
+    "informative_group_rate": 0.1,
+    "loose_informative_group_rate": 0.9,
+    "elapsed_sec": 0.3,
+    "examples": [
+      {
+        "expr": "63 + 38",
+        "answer": 101,
+        "greedy_output": "91"
+      },
+      {
+        "expr": "45 - 10",
+        "answer": 35,
+        "greedy_output": "35"
+      },
+      {
+        "expr": "30 + 99",
+        "answer": 129,
+        "greedy_output": "129"
+      }
+    ]
+  },
+  "L3_addsub_3digit": {
+    "n": 10,
+    "k": 8,
+    "greedy_format_rate": 0.0,
+    "greedy_strict_acc": 0.0,
+    "greedy_loose_acc": 0.7,
+    "sample_strict_acc": 0.05,
+    "sample_loose_acc": 0.4875,
+    "pass@8": 0.3,
+    "loose_pass@8": 1.0,
+    "informative_group_rate": 0.3,
+    "loose_informative_group_rate": 0.9,
+    "elapsed_sec": 0.9,
+    "examples": [
+      {
+        "expr": "470 + 691",
+        "answer": 1161,
+        "greedy_output": "1161"
+      },
+      {
+        "expr": "171 - 146",
+        "answer": 25,
+        "greedy_output": "171 - 146 = 25"
+      },
+      {
+        "expr": "891 - 396",
+        "answer": 495,
+        "greedy_output": "1415"
+      }
+    ]
+  },
+  "L4_mul_1digit": {
+    "n": 10,
+    "k": 8,
+    "greedy_format_rate": 0.0,
+    "greedy_strict_acc": 0.0,
+    "greedy_loose_acc": 1.0,
+    "sample_strict_acc": 0.0125,
+    "sample_loose_acc": 0.7,
+    "pass@8": 0.1,
+    "loose_pass@8": 1.0,
+    "informative_group_rate": 0.1,
+    "loose_informative_group_rate": 0.9,
+    "elapsed_sec": 0.2,
+    "examples": [
+      {
+        "expr": "8 × 6",
+        "answer": 48,
+        "greedy_output": "48"
+      },
+      {
+        "expr": "5 × 7",
+        "answer": 35,
+        "greedy_output": "35"
+      },
+      {
+        "expr": "2 × 5",
+        "answer": 10,
+        "greedy_output": "10"
+      }
+    ]
+  },
+  "L5_mul_2x1digit": {
+    "n": 10,
+    "k": 8,
+    "greedy_format_rate": 0.0,
+    "greedy_strict_acc": 0.0,
+    "greedy_loose_acc": 0.3,
+    "sample_strict_acc": 0.0375,
+    "sample_loose_acc": 0.275,
+    "pass@8": 0.3,
+    "loose_pass@8": 1.0,
+    "informative_group_rate": 0.3,
+    "loose_informative_group_rate": 1.0,
+    "elapsed_sec": 1.3,
+    "examples": [
+      {
+        "expr": "41 × 8",
+        "answer": 328,
+        "greedy_output": "248"
+      },
+      {
+        "expr": "81 × 7",
+        "answer": 567,
+        "greedy_output": "441"
+      },
+      {
+        "expr": "43 × 8",
+        "answer": 344,
+        "greedy_output": "272"
+      }
+    ]
+  },
+  "L6_mul_2x2digit": {
+    "n": 10,
+    "k": 8,
+    "greedy_format_rate": 0.0,
+    "greedy_strict_acc": 0.0,
+    "greedy_loose_acc": 0.1,
+    "sample_strict_acc": 0.0375,
+    "sample_loose_acc": 0.075,
+    "pass@8": 0.3,
+    "loose_pass@8": 0.4,
+    "informative_group_rate": 0.3,
+    "loose_informative_group_rate": 0.4,
+    "elapsed_sec": 0.5,
+    "examples": [
+      {
+        "expr": "90 × 30",
+        "answer": 2700,
+        "greedy_output": "3600"
+      },
+      {
+        "expr": "97 × 64",
+        "answer": 6208,
+        "greedy_output": "3548"
+      },
+      {
+        "expr": "86 × 18",
+        "answer": 1548,
+        "greedy_output": "4564"
+      }
+    ]
+  }
+}

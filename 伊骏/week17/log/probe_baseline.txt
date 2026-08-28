@@ -1,0 +1,12 @@
+(base) PS D:\Badou learning\Homework\week17\grpo_arithmetic> python src/probe_baseline.py
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 290/290 [00:00<00:00, 531.55it/s]
+L1_add_1digit        greedy_loose=1.00 fmt=0.00 loose_acc=0.89 loose_pass@8=0.98 loose_informative=0.46 (1.5s)
+L2_addsub_2digit     greedy_loose=0.78 fmt=0.02 loose_acc=0.70 loose_pass@8=0.98 loose_informative=0.72 (1.4s)
+L3_addsub_3digit     greedy_loose=0.52 fmt=0.02 loose_acc=0.44 loose_pass@8=0.96 loose_informative=0.90 (1.9s)
+L4_mul_1digit        greedy_loose=0.82 fmt=0.00 loose_acc=0.72 loose_pass@8=1.00 loose_informative=0.82 (1.4s)
+L5_mul_2x1digit      greedy_loose=0.38 fmt=0.00 loose_acc=0.27 loose_pass@8=0.80 loose_informative=0.78 (1.6s)
+L6_mul_2x2digit      greedy_loose=0.08 fmt=0.02 loose_acc=0.05 loose_pass@8=0.24 loose_informative=0.24 (2.4s)
+
+结果已保存：D:\Badou learning\Homework\week17\grpo_arithmetic\outputs\baseline_probe.json
+GPU 峰值显存：1.48 GB
+(base) PS D:\Badou learning\Homework\week17\grpo_arithmetic> 
